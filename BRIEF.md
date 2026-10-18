@@ -44,7 +44,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 ## Contact data
 
 - Email: hello@munus.com
-- Ankara: ODTÜ Teknokent, İhsan Doğramacı Blv., Üniversiteler Mah., 06800 Çankaya, Ankara, Türkiye (no building/unit yet)
+- Ankara: ODTÜ Teknokent, 06800 Çankaya, Ankara, Türkiye (no building/unit yet)
 - London: 12 Sample Street, London EC1X 0XX — **made-up placeholder, replace before launch**
 
 ## Open items before launch
