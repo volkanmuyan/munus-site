@@ -45,13 +45,13 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 - Email: hello@munus.com
 - Ankara: Şili Meydanı 49/A, Çankaya, Ankara, Türkiye
-- London: 27 Rivington Street, Shoreditch, London EC2A 3DU — **placeholder, replace before launch**
+- London: London, United Kingdom
 
 ## Open items before launch
 
 - [ ] Real hero videos → replace `public/videos/hero-1.mp4 … hero-4.mp4` (1920×1080, muted, 8–15 s, 2–6 MB; also export a poster frame for each).
 - [ ] Team: names, titles, photos (portrait, ~4:5), emails; QR codes are generated from these (vCard).
-- [ ] Real London address (or just "London, United Kingdom").
+- [x] Real London address (or just "London, United Kingdom").
 - [ ] munus originals projects.
 - [ ] Confirm the Helvena licence covers web embedding.
 - [ ] Domain (munus.com?) and the hello@ mailbox.
