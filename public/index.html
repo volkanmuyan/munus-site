@@ -379,7 +379,9 @@ h1{margin:0;font-weight:700;font-size:clamp(48px,min(9vw,15vh),150px);line-heigh
 .menu-links a::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.045em;background:currentColor;transform:scaleX(0);transform-origin:100% 50%;transition:transform .45s var(--ease)}
 .menu-links a:hover::after,.menu-links a:focus-visible::after{transform:scaleX(1);transform-origin:0 50%}
 .menu-links:hover a:not(:hover){opacity:.28}
-.menu-links .mask{padding-bottom:.08em;margin-bottom:-.08em}
+.menu-links .mask{padding:0 .14em .08em 0;margin:0 -.14em -.08em 0}
+.menu a{-webkit-tap-highlight-color:transparent}
+.menu:focus,.menu:focus-visible{outline:none}
 .menu.is-open .menu-links .mask > span{animation:title-in 1s var(--ease) backwards;animation-delay:calc(var(--i) * 70ms + .32s)}
 .menu-side{display:flex;flex-direction:column;gap:28px;font-size:17px}
 .menu-side div{display:flex;flex-direction:column;gap:2px}
@@ -407,6 +409,7 @@ html.menu-lock{overflow:hidden}
   .reach{grid-template-columns:minmax(0,1fr)}
   .foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
   .foot-brand{grid-column:1 / -1}
+  .foot-in{padding-bottom:calc(var(--mbtn) + var(--edge) + 16px + env(safe-area-inset-bottom,0px))}
 }
 @media (max-width:520px){
   .hero-top .ph-tag{display:none}
@@ -450,7 +453,7 @@ html.menu-lock{overflow:hidden}
   </svg>
 </button>
 
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" inert>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" tabindex="-1" inert>
   <div class="wrap menu-in">
     <div class="menu-top">
       <a class="logo" href="#top">munus</a>
@@ -857,7 +860,7 @@ html.menu-lock{overflow:hidden}
     menu.style.setProperty('--mx',(r.left+r.width/2)+'px');
     menu.style.setProperty('--my',(r.top+r.height/2)+'px');
   }
-  function setMenu(on,keep){
+  function setMenu(on,keep,viaKey){
     placeOrigin();
     menu.classList.toggle('is-open',on);
     menu.inert=!on;
@@ -866,12 +869,12 @@ html.menu-lock{overflow:hidden}
     mbtn.setAttribute('aria-label',on?'Close menu':'Open menu');
     root.classList.toggle('menu-lock',on);
     if(window.__slider)window.__slider.hold(on);
-    if(on){var f=menu.querySelector('.menu-links a');setTimeout(function(){f.focus({preventScroll:true})},motionOff?0:450)}
-    else if(!keep){mbtn.focus({preventScroll:true})}
+    if(on){var f=viaKey?menu.querySelector('.menu-links a'):menu;setTimeout(function(){f.focus({preventScroll:true})},motionOff?0:450)}
+    else if(!keep&&viaKey){mbtn.focus({preventScroll:true})}
   }
-  mbtn.addEventListener('click',function(){setMenu(!menu.classList.contains('is-open'))});
+  mbtn.addEventListener('click',function(e){setMenu(!menu.classList.contains('is-open'),false,e.detail===0)});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false,true)})});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('is-open'))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('is-open'))setMenu(false,false,true)});
   window.addEventListener('resize',placeOrigin);
 
 
