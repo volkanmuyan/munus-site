@@ -11,7 +11,7 @@ colours, type and motion. Rebuild or ship it without changing the design unless 
 | Anchor | Section | Notes |
 |---|---|---|
 | `#top` | Header | Wordmark "munus" (text, no logo mark). Transparent over the hero, dark veil after scrolling. Thin reading-progress bar. |
-| `#hero` | Hero | Full-viewport video slider, 4 slides, 7 s each, crossfade + slow zoom. Headline "a space of possibilities." Bottom bar: area name, `01 / 04` counter, progress segments, prev/next round buttons. Swipe and arrow keys. Pauses when the bottom bar is hovered, when off-screen, and when the menu is open. |
+| `#hero` | Hero | Full-viewport video slider, 6 slides (one per expertise area), 7 s each, crossfade + slow zoom. Headline "a space of possibilities." Bottom bar: area name, `01 / 06` counter, progress segments, prev/next round buttons. Swipe and arrow keys. Pauses when the bottom bar is hovered, when off-screen, and when the menu is open. |
 | `#hello` | Positioning | Large statement: "munus is a creative agency built to open up possibilities for the brands and institutions we work with." Supporting line + "meet the team" link. |
 | `#team` | Team | Four ID-badge cards hanging from one curved wire, each on its own string, slowly swaying. Hover: card tilts toward the pointer and gets a silver-foil sheen. Click: 3D flip to the back (title, city, one line, focus areas, email, vCard QR). Horizontal scroll on phones. |
 | `#expertise` | What we do | Six areas in an accordion; left card shows the big number (01–06) and name, tone changes per area. "sectors" row underneath. |
@@ -49,7 +49,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 ## Open items before launch
 
-- [ ] Real hero videos → replace `public/videos/hero-1.mp4 … hero-4.mp4` (1920×1080, muted, 8–15 s, 2–6 MB; also export a poster frame for each).
+- [ ] Real hero videos → replace `public/videos/hero-1.mp4 … hero-4.mp4` and add `hero-5.mp4`, `hero-6.mp4` (slides 5–6 reuse hero-2/hero-4 for now) (1920×1080, muted, 8–15 s, 2–6 MB; also export a poster frame for each).
 - [ ] Team: names, titles, photos (portrait, ~4:5), emails; QR codes are generated from these (vCard).
 - [x] Real London address (or just "London, United Kingdom").
 - [ ] munus originals projects.

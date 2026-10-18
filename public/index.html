@@ -226,7 +226,7 @@ h1{margin:0;font-weight:700;font-size:clamp(48px,min(9vw,15vh),150px);line-heigh
 
 /* ---------- team: badges hanging from one wire ---------- */
 .team .head{margin-bottom:clamp(8px,2vw,24px)}
-.team-hint{font-size:15px;color:var(--muted)}
+.team-hint{margin-left:auto;font-size:15px;color:var(--muted)}
 .rig{position:relative;margin-top:clamp(40px,5vw,72px);margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);overflow-x:auto;overflow-y:visible;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .rig::-webkit-scrollbar{display:none}
 .rig-in{position:relative;min-width:1040px;padding-bottom:40px}
@@ -483,11 +483,14 @@ html.menu-lock{overflow:hidden}
 
   <section class="hero" id="hero" aria-labelledby="hero-h" aria-roledescription="carousel">
     <!-- Videos: replace videos/hero-1.mp4 ... hero-4.mp4 with your own files under the same names.
+         Slides 5 and 6 reuse hero-2 and hero-4 until videos/hero-5.mp4 and hero-6.mp4 exist.
          Suggested: 1920x1080, muted, 8-15 s, 2-6 MB. -->
     <ul class="slides" aria-hidden="true">
       <li class="slide is-on"><video src="videos/hero-1.mp4" muted loop playsinline preload="auto"></video></li>
       <li class="slide"><video src="videos/hero-2.mp4" muted loop playsinline preload="metadata"></video></li>
       <li class="slide"><video src="videos/hero-3.mp4" muted loop playsinline preload="metadata"></video></li>
+      <li class="slide"><video src="videos/hero-4.mp4" muted loop playsinline preload="metadata"></video></li>
+      <li class="slide"><video src="videos/hero-2.mp4" muted loop playsinline preload="metadata"></video></li>
       <li class="slide"><video src="videos/hero-4.mp4" muted loop playsinline preload="metadata"></video></li>
     </ul>
     <div class="hero-shade" aria-hidden="true"></div>
@@ -501,14 +504,18 @@ html.menu-lock{overflow:hidden}
           <div class="cap-item"><span class="cap-studio">expertise</span><span class="cap-title">creative &amp; content</span></div>
           <div class="cap-item"><span class="cap-studio">expertise</span><span class="cap-title">events &amp; experiences</span></div>
           <div class="cap-item"><span class="cap-studio">expertise</span><span class="cap-title">corporate &amp; public affairs</span></div>
+          <div class="cap-item"><span class="cap-studio">expertise</span><span class="cap-title">intelligence &amp; research</span></div>
+          <div class="cap-item"><span class="cap-studio">expertise</span><span class="cap-title">advisory</span></div>
         </div>
         <div class="prog">
-          <div class="count" aria-hidden="true"><b id="cnt">01</b> <span>/ 04</span></div>
+          <div class="count" aria-hidden="true"><b id="cnt">01</b> <span>/ 06</span></div>
           <div class="segs">
             <button class="seg is-on" type="button" aria-label="Slide 1"></button>
             <button class="seg" type="button" aria-label="Slide 2"></button>
             <button class="seg" type="button" aria-label="Slide 3"></button>
             <button class="seg" type="button" aria-label="Slide 4"></button>
+            <button class="seg" type="button" aria-label="Slide 5"></button>
+            <button class="seg" type="button" aria-label="Slide 6"></button>
           </div>
         </div>
         <div class="arrows">
@@ -652,7 +659,7 @@ html.menu-lock{overflow:hidden}
           </ul>
         </div>
       </div>
-      <div class="team-foot"><span>04 people, one team</span><span class="team-hint">hover to shine · click to flip</span></div>
+      <div class="team-foot"><span class="team-hint">hover to shine · click to flip</span></div>
     </div>
   </section>
 
