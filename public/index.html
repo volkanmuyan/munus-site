@@ -234,16 +234,18 @@ h1{margin:0;font-weight:700;font-size:clamp(48px,min(9vw,15vh),150px);line-heigh
 .wire path{fill:none;stroke:currentColor;stroke-width:1.4;vector-effect:non-scaling-stroke}
 .wire circle{fill:currentColor}
 .badges{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,32px);margin:0;padding:0;list-style:none}
-.badge{display:flex;justify-content:center;padding-top:var(--wy)}
-.hang{position:relative;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;transform:rotate(var(--tilt));animation:sway var(--sway,7s) ease-in-out infinite alternate;animation-delay:calc(var(--i) * -1.7s)}
+.badge{display:flex;justify-content:center;padding-top:var(--wy);transform-origin:50% 0}
+.rig.in .badge{animation:drop 1.05s cubic-bezier(.16,1,.3,1) backwards;animation-delay:calc(var(--i) * 85ms)}
+@keyframes drop{from{opacity:0;transform:translateY(-28px) rotate(-4deg)}}
+.hang{position:relative;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;transform:rotate(var(--tilt));rotate:var(--sw,0deg);animation:sway var(--sway,7s) ease-in-out infinite alternate;animation-delay:calc(var(--i) * -1.7s)}
 @keyframes sway{from{transform:rotate(calc(var(--tilt) - 1.6deg))}to{transform:rotate(calc(var(--tilt) + 1.6deg))}}
 .badge:hover .hang,.badge:focus-within .hang{animation-play-state:paused}
 .string{width:1.4px;height:var(--drop);background:var(--ink)}
 .clip{width:22px;height:14px;margin-bottom:-6px;position:relative;z-index:2;border:1.6px solid var(--ink);border-bottom:0;border-radius:11px 11px 0 0;background:var(--grey)}
 .card3d{position:relative;display:block;width:clamp(232px,20vw,276px);aspect-ratio:5/7;max-width:100%;padding:0;border:0;background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer;perspective:1100px;-webkit-tap-highlight-color:transparent}
 .card3d:focus-visible{outline:2.5px solid var(--ink);outline-offset:6px;border-radius:20px}
-.flip{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(calc(var(--flip,0) * 180deg + var(--ry,0deg)));transition:transform .9s cubic-bezier(.3,1.4,.4,1)}
-.card3d.is-tilting .flip{transition:transform .18s ease-out}
+.tilt{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.flip{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(calc(var(--flip,0) * 180deg));transition:transform .9s cubic-bezier(.3,1.4,.4,1)}
 .card3d[aria-pressed="true"]{--flip:1}
 .face{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;padding:16px 16px 14px;border-radius:18px;background:var(--paper);border:1px solid var(--line);box-shadow:0 1px 0 rgba(10,10,10,.04),0 18px 40px -18px rgba(10,10,10,.35);backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
 .back{transform:rotateY(180deg);gap:9px}
@@ -276,12 +278,11 @@ h1{margin:0;font-weight:700;font-size:clamp(48px,min(9vw,15vh),150px);line-heigh
 .qr{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .qr span{display:block;width:64px;height:64px;padding:4px;background:var(--white);border:1px solid var(--line);border-radius:6px}
 .qr svg{display:block;width:100%;height:100%}
-.qr svg rect,.qr svg path{fill:var(--ink)}
+.qr svg path{fill:var(--ink)}
 /* silver-foil sheen that follows the pointer */
-.sheen{position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .4s;mix-blend-mode:soft-light;background:
+.sheen{position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:var(--lit,0);mix-blend-mode:soft-light;background:
   radial-gradient(circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 42%),
   linear-gradient(calc(110deg + var(--ang,0deg)),rgba(10,10,10,0) 18%,rgba(10,10,10,.5) 32%,rgba(255,255,255,.9) 44%,rgba(10,10,10,.45) 56%,rgba(255,255,255,.8) 68%,rgba(10,10,10,0) 82%)}
-.card3d:hover .sheen,.card3d.is-tilting .sheen{opacity:1}
 .team-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 24px;margin-top:8px;font-size:15px;color:var(--muted)}
 .motion-off .hang{animation:none}
 @media (prefers-reduced-motion:reduce){.hang{animation:none}.flip{transition-duration:.01s}}
@@ -551,7 +552,7 @@ html.menu-lock{overflow:hidden}
           <p>One team across six areas of expertise. Flip a card to see who does what.</p>
         </div>
       </div>
-      <div class="rig">
+      <div class="rig io">
         <div class="rig-in">
           <svg class="wire" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6Q500 110 1000 6"/></svg>
           <ul class="badges">
@@ -560,7 +561,7 @@ html.menu-lock{overflow:hidden}
             <span class="string" aria-hidden="true"></span>
             <span class="clip" aria-hidden="true"></span>
             <button class="card3d" type="button" aria-pressed="false" aria-label="Name Surname, brand &amp; marketing. Flip the card">
-              <span class="flip">
+              <span class="tilt"><span class="flip">
                 <span class="face front">
                   <span class="f-top"><span>munus · team</span><span>#01</span></span>
                   <span class="portrait"><svg viewBox="0 0 200 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="100" cy="92" r="42" fill="currentColor"/><path d="M22 250c4-56 38-92 78-92s74 36 78 92z" fill="currentColor"/></svg></span>
@@ -577,7 +578,7 @@ html.menu-lock{overflow:hidden}
                   <span class="b-foot"><span class="b-mail"><span class="b-cap">say hello</span><span>name@munus.com</span></span><span class="qr"><span data-qr="0"></span>scan</span></span>
                   <span class="sheen" aria-hidden="true"></span>
                 </span>
-              </span>
+              </span></span>
             </button>
           </div>
         </li>
@@ -586,7 +587,7 @@ html.menu-lock{overflow:hidden}
             <span class="string" aria-hidden="true"></span>
             <span class="clip" aria-hidden="true"></span>
             <button class="card3d" type="button" aria-pressed="false" aria-label="Name Surname, creative &amp; content. Flip the card">
-              <span class="flip">
+              <span class="tilt"><span class="flip">
                 <span class="face front">
                   <span class="f-top"><span>munus · team</span><span>#02</span></span>
                   <span class="portrait"><svg viewBox="0 0 200 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="100" cy="92" r="42" fill="currentColor"/><path d="M22 250c4-56 38-92 78-92s74 36 78 92z" fill="currentColor"/></svg></span>
@@ -603,7 +604,7 @@ html.menu-lock{overflow:hidden}
                   <span class="b-foot"><span class="b-mail"><span class="b-cap">say hello</span><span>name@munus.com</span></span><span class="qr"><span data-qr="1"></span>scan</span></span>
                   <span class="sheen" aria-hidden="true"></span>
                 </span>
-              </span>
+              </span></span>
             </button>
           </div>
         </li>
@@ -612,7 +613,7 @@ html.menu-lock{overflow:hidden}
             <span class="string" aria-hidden="true"></span>
             <span class="clip" aria-hidden="true"></span>
             <button class="card3d" type="button" aria-pressed="false" aria-label="Name Surname, corporate &amp; public affairs. Flip the card">
-              <span class="flip">
+              <span class="tilt"><span class="flip">
                 <span class="face front">
                   <span class="f-top"><span>munus · team</span><span>#03</span></span>
                   <span class="portrait"><svg viewBox="0 0 200 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="100" cy="92" r="42" fill="currentColor"/><path d="M22 250c4-56 38-92 78-92s74 36 78 92z" fill="currentColor"/></svg></span>
@@ -629,7 +630,7 @@ html.menu-lock{overflow:hidden}
                   <span class="b-foot"><span class="b-mail"><span class="b-cap">say hello</span><span>name@munus.com</span></span><span class="qr"><span data-qr="2"></span>scan</span></span>
                   <span class="sheen" aria-hidden="true"></span>
                 </span>
-              </span>
+              </span></span>
             </button>
           </div>
         </li>
@@ -638,7 +639,7 @@ html.menu-lock{overflow:hidden}
             <span class="string" aria-hidden="true"></span>
             <span class="clip" aria-hidden="true"></span>
             <button class="card3d" type="button" aria-pressed="false" aria-label="Name Surname, intelligence &amp; research. Flip the card">
-              <span class="flip">
+              <span class="tilt"><span class="flip">
                 <span class="face front">
                   <span class="f-top"><span>munus · team</span><span>#04</span></span>
                   <span class="portrait"><svg viewBox="0 0 200 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="100" cy="92" r="42" fill="currentColor"/><path d="M22 250c4-56 38-92 78-92s74 36 78 92z" fill="currentColor"/></svg></span>
@@ -655,7 +656,7 @@ html.menu-lock{overflow:hidden}
                   <span class="b-foot"><span class="b-mail"><span class="b-cap">say hello</span><span>name@munus.com</span></span><span class="qr"><span data-qr="3"></span>scan</span></span>
                   <span class="sheen" aria-hidden="true"></span>
                 </span>
-              </span>
+              </span></span>
             </button>
           </div>
         </li>
@@ -878,29 +879,64 @@ html.menu-lock{overflow:hidden}
   window.addEventListener('resize',placeOrigin);
 
 
-  /* team badges: tilt + sheen follow the pointer, click flips */
+  /* team badges: spring-driven swing, tilt and sheen; the pointer pushes a card, click flips it */
   (function(){
-    var cards=[].slice.call(document.querySelectorAll('.card3d'));
-    cards.forEach(function(c){
+    [].slice.call(document.querySelectorAll('.badge')).forEach(function(b){
+      var hang=b.querySelector('.hang'), c=b.querySelector('.card3d');
+      var keys=['x','y','light','sway'];
+      var cur={x:0,y:0,light:0,sway:0}, vel={x:0,y:0,light:0,sway:0}, goal={x:0,y:0,light:0,sway:0};
+      var raf=0, last=0, lastX=null;
+      function paint(){
+        var fl=c.getAttribute('aria-pressed')==='true';
+        c.style.setProperty('--rx',(-cur.y*6).toFixed(2)+'deg');
+        c.style.setProperty('--ry',(cur.x*8).toFixed(2)+'deg');
+        c.style.setProperty('--px',(((fl?-cur.x:cur.x)+1)*50).toFixed(1)+'%');
+        c.style.setProperty('--py',((cur.y+1)*50).toFixed(1)+'%');
+        c.style.setProperty('--ang',(cur.x*30).toFixed(1)+'deg');
+        c.style.setProperty('--lit',cur.light.toFixed(3));
+        hang.style.setProperty('--sw',cur.sway.toFixed(3)+'deg');
+      }
+      function step(t){
+        var dt=last?Math.min(2.5,(t-last)/16.67):1, moving=false;
+        last=t;
+        keys.forEach(function(k){
+          var sw=k==='sway', pull=goal[k]-cur[k];
+          // the swing is a looser spring than the tilt, so it rocks a few times before settling
+          vel[k]=(vel[k]+pull*(sw?.09:.17)*dt)*Math.pow(sw?.86:.74,dt);
+          cur[k]+=vel[k]*dt;
+          if(Math.abs(pull)>.002||Math.abs(vel[k])>.002)moving=true;
+          else{cur[k]=goal[k];vel[k]=0}
+        });
+        paint();
+        raf=moving?requestAnimationFrame(step):0;
+      }
+      function run(){if(!raf&&!motionOff){last=0;raf=requestAnimationFrame(step)}}
+      function kick(v){vel.sway=Math.max(-1.2,Math.min(1.2,vel.sway+v));run()}
+      function rest(){
+        lastX=null;goal={x:0,y:0,light:0,sway:0};
+        if(motionOff){cur={x:0,y:0,light:0,sway:0};paint()}else run();
+      }
+      // positive rotate swings the bottom of the card left, so a push to the right is negative
+      b.addEventListener('pointerenter',function(e){
+        if(e.pointerType!=='mouse'||motionOff)return;
+        var r=c.getBoundingClientRect();
+        kick(e.clientX<r.left+r.width/2?-1:1);
+      });
+      b.addEventListener('pointermove',function(e){
+        if(e.pointerType!=='mouse'||motionOff)return;
+        var r=c.getBoundingClientRect();
+        var x=Math.max(-1,Math.min(1,(e.clientX-r.left)/r.width*2-1)), y=Math.max(-1,Math.min(1,(e.clientY-r.top)/r.height*2-1));
+        if(lastX!==null)vel.sway=Math.max(-1.2,Math.min(1.2,vel.sway-Math.max(-35,Math.min(35,e.clientX-lastX))*.02));
+        lastX=e.clientX;
+        goal={x:x,y:y,light:1,sway:x*1.2};
+        run();
+      });
+      b.addEventListener('pointerleave',rest);
+      b.addEventListener('pointercancel',rest);
       c.addEventListener('click',function(){
         var on=c.getAttribute('aria-pressed')!=='true';
         c.setAttribute('aria-pressed',String(on));
-        c._t=Date.now();c.classList.remove('is-tilting');
-      });
-      c.addEventListener('pointermove',function(e){
-        if(e.pointerType!=='mouse'||motionOff)return;
-        var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
-        if(!c._t||Date.now()-c._t>950)c.classList.add('is-tilting');
-        c.style.setProperty('--ry',((x-.5)*16).toFixed(2)+'deg');
-        c.style.setProperty('--rx',((.5-y)*12).toFixed(2)+'deg');
-        var fl=c.getAttribute('aria-pressed')==='true';
-        c.style.setProperty('--px',((fl?1-x:x)*100).toFixed(1)+'%');
-        c.style.setProperty('--py',(y*100).toFixed(1)+'%');
-        c.style.setProperty('--ang',((x-.5)*60).toFixed(1)+'deg');
-      });
-      c.addEventListener('pointerleave',function(){
-        c.classList.remove('is-tilting');
-        ['--rx','--ry','--px','--py','--ang'].forEach(function(k){c.style.removeProperty(k)});
+        if(!motionOff)kick(on?1.1:-1.1);
       });
     });
     function drawQR(){
