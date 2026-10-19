@@ -10,6 +10,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="robots" content="noindex,nofollow"><!-- TODO: remove at launch, once the domain is set -->
 <meta name="theme-color" content="#0A0A0A">
+<script>try{if(localStorage.getItem("munus-color")==="on")document.documentElement.dataset.color="on"}catch(e){}</script>
 <!-- Open Graph: make og:image absolute (https://<domain>/og.png) and add og:url once the domain is confirmed. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="munus">
@@ -405,6 +406,37 @@ h1{margin:0;font-weight:700;font-size:clamp(48px,min(9vw,15vh),150px);line-heigh
 .menu.is-open .menu-side,.menu.is-open .menu-top{animation:rise .7s var(--ease) backwards .55s}
 html.menu-lock{overflow:hidden}
 
+/* ---------- colour mode: one colour per expertise, off by default ---------- */
+:root{--c-brand:#3D4BFF;--c-creative:#FF2E9A;--c-events:#FF6A13;--c-corporate:#00D65A;--c-research:#C9A8FF;--c-advisory:#FFD400}
+.ctog{display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px 0 8px;border:1.5px solid var(--line-on-dark);border-radius:999px;background:transparent;color:var(--light);font:500 14px/1 var(--font);cursor:pointer;transition:border-color .3s,background .3s;-webkit-tap-highlight-color:transparent}
+.ctog:hover{border-color:var(--light)}
+.ctog-dot{width:24px;height:24px;border-radius:50%;background:conic-gradient(var(--c-brand),var(--c-creative),var(--c-events),var(--c-advisory),var(--c-corporate),var(--c-research),var(--c-brand));filter:grayscale(1) brightness(1.3);transition:filter .5s,transform .8s var(--ease)}
+.ctog[aria-pressed="true"] .ctog-dot{filter:none;transform:rotate(180deg)}
+.svc-card,.face,.contact,.band,.menu{transition-property:background,color,box-shadow,clip-path,visibility;transition-duration:.5s}
+html[data-color="on"] .progress{background:linear-gradient(90deg,var(--c-brand),var(--c-creative),var(--c-events),var(--c-advisory),var(--c-corporate),var(--c-research))}
+html[data-color="on"] ::selection{background:var(--c-advisory);color:var(--ink)}
+/* expertise card, in the order of the list: brand, corporate, creative, events, research, advisory */
+html[data-color="on"] .svc-card[data-tone="0"]{background:var(--c-brand);color:var(--light)}
+html[data-color="on"] .svc-card[data-tone="1"]{background:var(--c-corporate);color:var(--ink)}
+html[data-color="on"] .svc-card[data-tone="2"]{background:var(--c-creative);color:var(--ink)}
+html[data-color="on"] .svc-card[data-tone="3"]{background:var(--c-events);color:var(--ink)}
+html[data-color="on"] .svc-card[data-tone="4"]{background:var(--c-research);color:var(--ink)}
+html[data-color="on"] .svc-card[data-tone="5"]{background:var(--c-advisory);color:var(--ink);box-shadow:none}
+/* team cards take their person's expertise colour */
+html[data-color="on"] .t-mist .face{background:var(--c-brand);border-color:transparent;color:var(--light)}
+html[data-color="on"] .t-grey .face{background:var(--c-creative);border-color:transparent}
+html[data-color="on"] .t-ink .face{background:var(--c-corporate);border-color:transparent}
+html[data-color="on"] .t-dark .face{background:var(--c-research);border-color:transparent}
+html[data-color="on"] .face .f-top,html[data-color="on"] .face .who span,html[data-color="on"] .face .b-cap,html[data-color="on"] .face .city,html[data-color="on"] .face .qr{color:inherit;opacity:.72}
+html[data-color="on"] .face .f-foot,html[data-color="on"] .face .b-list > span{border-color:rgba(10,10,10,.22)}
+html[data-color="on"] .t-mist .face .f-foot,html[data-color="on"] .t-mist .face .b-list > span{border-color:rgba(255,255,255,.3)}
+html[data-color="on"] .t-mist .face .f-foot i{background:var(--light);color:var(--c-brand)}
+html[data-color="on"] #originals{background:var(--c-research)}
+html[data-color="on"] .contact{background:var(--c-brand)}
+html[data-color="on"] .contact .reach div{border-top-color:rgba(255,255,255,.35)}
+html[data-color="on"] .menu{background:var(--c-corporate)}
+html[data-color="on"] .menu-top span,html[data-color="on"] .menu-side span{color:rgba(10,10,10,.62)}
+
 /* ---------- narrow ---------- */
 @media (max-width:900px){
   .hero-foot{grid-template-columns:minmax(0,1fr) auto;padding-right:0}
@@ -470,6 +502,7 @@ html.menu-lock{overflow:hidden}
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="wrap bar-in">
     <a class="logo" href="#top" aria-label="munus, back to top">munus</a>
+    <button class="ctog" id="color-btn" type="button" aria-pressed="false" aria-label="Colour mode"><span class="ctog-dot" aria-hidden="true"></span><span class="ctog-t">colour</span></button>
   </div>
 </header>
 
@@ -849,6 +882,20 @@ html.menu-lock{overflow:hidden}
   }
   btn.addEventListener('click',function(){motionOff=!motionOff;write(motionOff?'off':'on');applyMotion();});
 
+  /* colour mode */
+  var cbtn=document.getElementById('color-btn');
+  function applyColor(on){
+    if(on)root.dataset.color='on';else delete root.dataset.color;
+    cbtn.setAttribute('aria-pressed',String(on));
+    if(window.__slider&&window.__slider.refresh)window.__slider.refresh();
+  }
+  cbtn.setAttribute('aria-pressed',String(root.dataset.color==='on'));
+  cbtn.addEventListener('click',function(){
+    var on=root.dataset.color!=='on';
+    try{localStorage.setItem('munus-color',on?'on':'off')}catch(e){}
+    applyColor(on);
+  });
+
   /* reading bar */
   var bar=document.getElementById('progress'), head=document.querySelector('.bar'), ticking=false;
   function onScroll(){
@@ -999,6 +1046,8 @@ html.menu-lock{overflow:hidden}
   /* hero art: one generative black & white scene per expertise */
   var art=(function(){
     var TAU=Math.PI*2, INK='243,243,241', BG='#0A0A0A';
+    /* colour mode: brand, creative, events, corporate, research, advisory (hero order) */
+    var PAL=['125,138,255','255,46,154','255,106,19','0,214,90','201,168,255','255,212,0'];
     /* improved Perlin noise */
     var P=new Uint8Array(512);
     (function(){var p=[],i,s=7;for(i=0;i<256;i++)p[i]=i;for(i=255;i>0;i--){s=s*16807%2147483647;var j=s%(i+1),t=p[i];p[i]=p[j];p[j]=t}for(i=0;i<512;i++)P[i]=p[i&255]})();
@@ -1139,7 +1188,7 @@ html.menu-lock{overflow:hidden}
       c.width=w;c.height=h;var x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.fillStyle=BG;x.fillRect(0,0,W,H);
       st[k]={ok:1};scenes[k].init(st[k],W,H);
     }
-    function draw(k,step){ready(k);var x=cv[k].getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);scenes[k].frame(x,st[k],W,H,t,step,mx,my)}
+    function draw(k,step){ready(k);INK=document.documentElement.dataset.color==='on'?PAL[k]:'243,243,241';var x=cv[k].getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);scenes[k].frame(x,st[k],W,H,t,step,mx,my)}
     function tick(now){
       var k=Math.min(now-last,50)/16.67;last=now;t+=k*16.67;
       draw(cur,k);
@@ -1200,6 +1249,7 @@ html.menu-lock{overflow:hidden}
     }
     window.__slider={
       motion:function(v){off=v;playOnly(i);schedule()},
+      refresh:function(){playOnly(i)},
       hold:function(v){held=v;schedule()}
     };
     go(0);

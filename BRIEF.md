@@ -41,6 +41,12 @@ Sectors: energy & utilities · construction & building materials · public secto
 - Gutter `clamp(16px,4vw,56px)`, max content width 1360px.
 - Respect `prefers-reduced-motion` and keep the "pause motion" toggle.
 
+## Colour mode
+
+- Opt-in toggle ("colour") in the top bar; black and white stays the default. The choice is remembered per browser (localStorage `munus-color`).
+- One colour per expertise: brand & marketing `#3D4BFF`, creative & content `#FF2E9A`, events & experiences `#FF6A13`, corporate & public affairs `#00D65A`, intelligence & research `#C9A8FF`, advisory `#FFD400` (CSS vars `--c-*`).
+- Used for: hero art (each slide in its expertise colour), the expertise card, team card faces, originals band (research lilac), contact band (brand blue), menu (corporate green), the reading bar.
+
 ## Contact data
 
 - Email: hello@munus.com (big, in the contact section)
