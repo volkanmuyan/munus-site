@@ -78,3 +78,8 @@ Sectors: energy & utilities · construction & building materials · public secto
 - The credit lines say the work was done in previous roles; keep them. Showing client logos is common practice for portfolio work, but get permission where you can.
 - [ ] Fill in projects, numbers and people's previous roles.
 - [ ] "Official partner" badges only once munus is actually in those programmes.
+
+## Project tracker (`/takip`)
+
+- Internal task list for the agency set-up (company, website, social, showreel, print, partnerships). Not linked from the site; `noindex` meta plus an `X-Robots-Tag` header for `/takip` — keep both after launch.
+- `public/takip.html` + `api/tasks.js` (Vercel function). Shared storage is an Upstash Redis store (Vercel → Storage), env `KV_REST_API_URL` / `KV_REST_API_TOKEN`; access needs the team passcode in env `TRACKER_KEY`. Until both are set the page runs on the viewer's own browser (localStorage) with the starting list.
