@@ -343,6 +343,8 @@ h1{margin:0;font-weight:700;font-size:clamp(48px,min(9vw,15vh),150px);line-heigh
 .reach{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;margin:0}
 .reach div{display:flex;flex-direction:column;gap:6px;padding-top:18px;border-top:1px solid var(--line-on-dark)}
 .reach dt{font-size:15px;color:var(--on-dark-muted)}
+.reach dd a{color:inherit;text-decoration:none}
+.reach dd a:hover{text-decoration:underline;text-underline-offset:.15em;text-decoration-thickness:2px}
 .reach dd{margin:0;font-size:clamp(20px,2.2vw,30px);font-weight:500;letter-spacing:-.02em;overflow-wrap:anywhere}
 .foot{background:var(--ink);color:var(--light);border-top:1px solid var(--line-on-dark)}
 .foot-in{display:flex;flex-direction:column;gap:clamp(36px,5vw,64px);padding-block:clamp(40px,5vw,64px) 28px}
@@ -434,6 +436,13 @@ html.menu-lock{overflow:hidden}
 @media (max-width:640px){
   .rig{padding-inline:calc((100% - var(--cw)) / 2);scroll-padding-inline:0}
   .badge{scroll-snap-align:center}
+}
+/* touch: give small links a 44px target without changing their look */
+@media (pointer:coarse){
+  .foot-col a,.tlink{position:relative}
+  .foot-col a::after,.tlink::after{content:"";position:absolute;inset:-4px -6px}
+  .tlink::after{inset:-8px -6px -4px}
+  .foot-col a.soc::after{inset:-4px -12px}
 }
 @media (max-width:520px){
   .hero-top .ph-tag{display:none}
@@ -772,7 +781,7 @@ html.menu-lock{overflow:hidden}
       <div class="contact-top"><span>contact</span><span>Ankara · London</span></div>
       <h2 class="shout" id="contact-h"><span class="mask io"><span>say hello.</span></span></h2>
       <dl class="reach">
-        <div><dt>email</dt><dd>hello@munus.com</dd></div>
+        <div><dt>email</dt><dd><a href="mailto:hello@munus.com">hello@munus.com</a></dd></div>
       </dl>
     </div>
   </section>
