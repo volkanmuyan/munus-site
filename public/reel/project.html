@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>munus — selected work</title>
+<meta name="description" content="Selected work by the people behind munus, from their previous roles.">
+<!-- Unlisted, like /reel. Served at /reel/<slug> through a rewrite in vercel.json. -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="munus">
+<meta property="og:title" content="munus — selected work">
+<meta property="og:description" content="munus is new. Our work isn't.">
+<!-- TODO: switch to the real domain once it is set -->
+<meta property="og:image" content="https://munus-site.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/helvena-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/helvena-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@1,200&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/reel/reel.css">
+<style>
+/* project page */
+.back{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:15px;text-decoration:none}
+.back svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.back:hover svg{transform:translateX(-4px)}
+.p-head{padding-block:calc(var(--bar) + clamp(56px,10vh,120px)) clamp(36px,5vw,64px)}
+.p-head .idx{margin-bottom:clamp(20px,3vw,32px)}
+.p-head h1{font-size:clamp(52px,10vw,168px)}
+.p-head .line{max-width:46ch;margin-top:clamp(20px,3vw,32px);font-size:clamp(18px,1.6vw,22px)}
+.p-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 28px;margin:clamp(36px,5vw,64px) 0 0}
+.p-meta div{display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--line-on-dark)}
+.p-meta dt{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted)}
+.p-meta dd{margin:0;font-size:17px}
+.p-hero{position:relative;height:min(86vh,980px);min-height:420px;overflow:hidden;background:var(--dark-2);clip-path:inset(12% 6% 0 6%);transition:clip-path 1.4s cubic-bezier(.77,0,.18,1)}
+.p-hero.in{clip-path:inset(0 0 0 0)}
+.p-hero > img,.p-hero > video,.p-hero > .art{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;transform:translateY(calc(var(--py,0) * 1%))}
+.p-hero .ph-tag{position:absolute;left:var(--gutter);bottom:24px}
+.p-hero .big{position:absolute;right:var(--gutter);top:24px;font-size:clamp(120px,22vw,360px);font-weight:700;line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(243,243,241,.3)}
+.story{padding-block:clamp(88px,12vw,180px)}
+.story-row{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr);gap:20px clamp(28px,5vw,88px);padding-block:clamp(32px,4vw,56px);border-top:1px solid var(--line-on-dark)}
+.story-row:last-child{border-bottom:1px solid var(--line-on-dark)}
+.story-row h2{margin:0;font-size:15px;font-weight:400;color:var(--on-dark-muted)}
+.story-row p{max-width:40ch;font-size:clamp(24px,2.6vw,40px);font-weight:500;line-height:1.2;letter-spacing:-.03em}
+.p-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-bottom:clamp(88px,12vw,180px)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);padding-bottom:clamp(88px,12vw,180px)}
+.gallery .media{clip-path:inset(100% 0 0 0)}
+.gallery .cell.in .media{clip-path:inset(0 0 0 0)}
+.gallery .cell:nth-child(3n+1){grid-column:1 / -1}
+.gallery .cell:nth-child(3n+1) .media{aspect-ratio:16/8}
+.credits{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr);gap:20px clamp(28px,5vw,88px);padding-bottom:clamp(88px,12vw,180px)}
+.credits ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line-on-dark)}
+.credits li{display:flex;justify-content:space-between;gap:20px;padding-block:14px;border-bottom:1px solid var(--line-on-dark)}
+.credits li span{color:var(--on-dark-muted)}
+.credits .note{grid-column:2;max-width:64ch;font-size:14px;color:var(--on-dark-muted)}
+.next{display:block;padding-block:clamp(72px,10vw,150px);border-top:1px solid var(--line-on-dark);text-decoration:none;overflow:hidden}
+.next .label{display:flex;justify-content:space-between;gap:20px}
+.next b{display:block;margin-top:clamp(16px,2vw,28px);font-size:clamp(52px,10vw,168px);font-weight:700;line-height:1;letter-spacing:-.055em;transition:transform .7s var(--ease)}
+.next:hover b{transform:translateX(clamp(12px,2vw,32px))}
+.next .bar-line{display:block;height:2px;margin-top:clamp(24px,3vw,40px);background:var(--line-on-dark);position:relative}
+.next .bar-line::after{content:"";position:absolute;inset:0;background:var(--light);transform:scaleX(0);transform-origin:0 50%;transition:transform .9s var(--ease)}
+.next:hover .bar-line::after{transform:scaleX(1)}
+.notfound{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:24px}
+@media (max-width:900px){
+  .p-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .story-row,.credits{grid-template-columns:minmax(0,1fr)}
+  .credits .note{grid-column:1}
+  .p-stats{grid-template-columns:minmax(0,1fr);gap:28px}
+  .gallery{grid-template-columns:minmax(0,1fr)}
+  .gallery .cell:nth-child(3n+1) .media{aspect-ratio:16/11}
+  .p-hero{height:62vh;min-height:320px}
+}
+@media (prefers-reduced-motion:reduce){.p-hero,.gallery .media{clip-path:none}}
+</style>
+</head>
+<body>
+
+<div class="rail" id="rail" aria-hidden="true"></div>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="/" aria-label="munus home">munus</a>
+    <a class="back" href="/reel#work"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M13 7H1.5M6 2.5 1.5 7 6 11.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>the reel</a>
+  </div>
+</header>
+
+<main id="page"></main>
+
+<script src="/reel/data.js"></script>
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function pad(n){return (n<10?'0':'')+n}
+  var arr='<svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12 12 2M4.5 2H12v7.5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>';
+  function media(m,i,cls,tag){
+    if(/\.(mp4|webm)$/i.test(m))return '<video src="'+esc(m)+'" muted loop playsinline autoplay preload="metadata"></video>';
+    if(m)return '<img src="'+esc(m)+'" alt="" decoding="async"'+(cls?' loading="lazy"':'')+'>';
+    return '<div class="art" style="--a:'+(100+i*37)+'deg;--x:'+(30+i*13%60)+'%;--y:'+(25+i*17%50)+'%"></div>'+(tag?'<span class="big" aria-hidden="true">'+tag+'</span>':'')+'<span class="ph-tag">image / video</span>';
+  }
+
+  /* which project: /reel/<slug>, or ?p=<slug> when served without rewrites */
+  var q=new URLSearchParams(location.search).get('p');
+  var slug=q||decodeURIComponent(location.pathname.replace(/\/+$/,'').split('/').pop());
+  var i=-1;WORK.forEach(function(w,j){if(w.slug===slug)i=j});
+  var page=document.getElementById('page');
+  if(i<0){
+    page.innerHTML='<section class="wrap notfound in"><p class="label">selected work</p><h1>not found.</h1><a class="tlink" href="/reel">back to the reel '+arr+'</a></section>';
+    return;
+  }
+  var w=WORK[i],n=WORK.length,nx=WORK[(i+1)%n];
+  document.title='munus — '+w.title;
+
+  page.innerHTML=
+    '<section class="p-head wrap in">'+
+      '<p class="idx rv"><b>'+pad(i+1)+' / '+pad(n)+'</b>'+esc(w.tags.join(' · '))+'</p>'+
+      '<h1><span class="mask"><span style="--d:.1s">'+esc(w.title)+'</span></span></h1>'+
+      '<p class="line rv" style="--d:.3s">'+esc(w.line)+'</p>'+
+      '<dl class="p-meta rv" style="--d:.45s"><div><dt>for</dt><dd>'+esc(w.client)+'</dd></div><div><dt>year</dt><dd>'+esc(w.year)+'</dd></div><div><dt>by</dt><dd>'+esc(w.by)+'</dd></div><div><dt>role</dt><dd>'+esc(w.role)+'</dd></div></dl>'+
+    '</section>'+
+    '<div class="p-hero" id="hero">'+media(w.media,i,'',pad(i+1))+'</div>'+
+    '<section class="story wrap io">'+
+      [['the brief',w.brief],['the idea',w.idea],['the result',w.result]].map(function(r,k){
+        return '<div class="story-row rv" style="--d:'+(k*.08)+'s"><h2>'+r[0]+'</h2><p>'+esc(r[1])+'</p></div>';
+      }).join('')+
+    '</section>'+
+    (w.stats&&w.stats.length?'<section class="wrap io"><div class="p-stats">'+w.stats.map(function(s,k){
+      return '<div class="num rv" style="--d:'+(k*.1)+'s"><b>'+esc(s.n)+'</b><span>'+esc(s.label)+'</span></div>';
+    }).join('')+'</div></section>':'')+
+    (w.gallery&&w.gallery.length?'<section class="wrap"><div class="gallery">'+w.gallery.map(function(g,k){
+      return '<div class="cell"><div class="media">'+media(g,i+k+1,'lazy','')+'</div></div>';
+    }).join('')+'</div></section>':'')+
+    '<section class="wrap credits io"><p class="label rv">credits</p><ul class="rv" style="--d:.1s">'+
+      (w.credits||[]).map(function(c){return '<li>'+esc(c.name)+'<span>'+esc(c.role)+'</span></li>'}).join('')+
+      '</ul><p class="note rv" style="--d:.2s">Created by members of the munus team in previous roles, for or with '+esc(w.client)+'. Rights remain with their owners.</p></section>'+
+    '<a class="next wrap" href="/reel/'+esc(nx.slug)+'"><span class="label"><span>next project</span><span>'+pad((i+1)%n+1)+' / '+pad(n)+'</span></span><b>'+esc(nx.title)+' →</b><span class="bar-line"></span></a>'+
+    '<div class="wrap foot-end" style="padding-bottom:40px"><span>© 2026 munus</span><a href="/reel">all work</a></div>';
+
+  /* reveals */
+  /* observe wrappers, not the clipped media: a fully clipped box never counts as visible */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  [].forEach.call(document.querySelectorAll('.io,.gallery .cell'),function(el){io.observe(el)});
+  var hero=document.getElementById('hero');
+  requestAnimationFrame(function(){setTimeout(function(){hero.classList.add('in')},250)});
+
+  /* progress rail and hero parallax */
+  var rail=document.getElementById('rail'),hm=hero.firstElementChild,ticking=false;
+  function update(){
+    ticking=false;
+    var max=document.documentElement.scrollHeight-innerHeight;
+    rail.style.setProperty('--p',(max>0?scrollY/max:0).toFixed(4));
+    if(!reduce&&hm){var r=hero.getBoundingClientRect();hm.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)/innerHeight*-6).toFixed(2))}
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
+  update();
+})();
+</script>
+</body>
+</html>

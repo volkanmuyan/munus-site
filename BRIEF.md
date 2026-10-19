@@ -63,8 +63,10 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 ## Unlisted showreel (`/reel`)
 
-- `public/reel.html`: dark, scroll-driven showreel of work the team did *before* munus. Not linked from the site; shared by URL only. `noindex` meta plus an `X-Robots-Tag` header for `/reel` in vercel.json — keep both after launch.
-- Content lives in the arrays at the top of its script (`NUMBERS`, `WORK`, `PLACES`, `PEOPLE`). Project media go in `public/work/` (image or mp4); an empty `media` shows a placeholder.
-- Institutions listed (names only, no logos): Oracle, Koç, TikTok, Uludağ Enerji, Astor, TÜREB, TÜREK, ALÇIDER, ELDER.
-- The credit line says the work was done in previous roles; keep it. Use client logos only with permission.
+- `public/reel.html` (the reel) and `public/reel/project.html` (one page per project, served at `/reel/<slug>` by a rewrite in vercel.json; locally use `/reel/project?p=<slug>`). Shared styles in `public/reel/reel.css`.
+- Not linked from the site; shared by URL only. `noindex` meta on both pages plus an `X-Robots-Tag` header for `/reel*` in vercel.json — keep these after launch.
+- All content lives in `public/reel/data.js` (`NUMBERS`, `WORK`, `PLACES`, `PEOPLE`). Project media go in `public/work/`; empty media shows a placeholder.
+- Logo marquee: white-on-transparent files in `public/logos/`, taken from each organisation's own website (Oracle and TikTok wordmarks from Wikimedia Commons). Koç cropped to the main mark (no "100"), Uludağ Enerji without its slogan; TÜREB's site only has the emblem, so the name is set next to it.
+- The credit lines say the work was done in previous roles; keep them. Showing client logos is common practice for portfolio work, but get permission where you can.
 - [ ] Fill in projects, numbers and people's previous roles.
+- [ ] "Official partner" badges only once munus is actually in those programmes.
