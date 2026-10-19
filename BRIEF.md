@@ -43,17 +43,20 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 ## Contact data
 
-- Email: hello@munus.com
+- Email: hello@munus.com (big, in the contact section)
+- Office addresses live in the footer ("offices" column), not in the contact section.
 - Ankara: ODTÜ Teknokent, 06800 Çankaya, Ankara, Türkiye (no building/unit yet)
 - London: 12 Sample Street, London EC1X 0XX — **made-up placeholder, replace before launch**
 
 ## Open items before launch
 
-- [ ] Real hero videos → replace `public/videos/hero-1.mp4 … hero-4.mp4` and add `hero-5.mp4`, `hero-6.mp4` (slides 5–6 reuse hero-2/hero-4 for now) (1920×1080, muted, 8–15 s, 2–6 MB; also export a poster frame for each).
+- [ ] Real hero videos → replace `public/videos/hero-1.mp4 … hero-4.mp4` and add `hero-5.mp4`, `hero-6.mp4` (slides 5–6 reuse hero-2/hero-4 for now) (1920×1080, muted, 8–15 s, 2–6 MB; also export a poster frame for each as `hero-N.webp` — current posters are first frames of the placeholder videos).
 - [ ] Team: names, titles, photos (portrait, ~4:5), emails; QR codes are generated from these (vCard).
 - [ ] Real London address — the site currently shows a made-up placeholder.
 - [ ] munus originals projects.
 - [ ] Confirm the Helvena licence covers web embedding.
 - [ ] Domain (munus.com?) and the hello@ mailbox.
+- [ ] At launch: remove the `noindex` meta in index.html and the `X-Robots-Tag` header in vercel.json; then add sitemap.xml, robots.txt, Organization JSON-LD, absolute og:image URL, and submit to Search Console.
+- [ ] Vercel Web Analytics: the script is in the page; enable it in the Vercel project (Analytics tab). It is cookieless.
 - [ ] Favicon, Open Graph image, page title/description check.
 - [ ] Privacy / cookie notice (KVKK, UK GDPR) if analytics are added.
