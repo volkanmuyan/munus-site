@@ -11,6 +11,7 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0A0A0A">
+<script>try{if(localStorage.getItem("munus-color")==="on")document.documentElement.dataset.color="on"}catch(e){}</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="munus">
 <meta property="og:title" content="munus — selected work">
@@ -83,7 +84,7 @@
 <header class="bar">
   <div class="wrap bar-in">
     <a class="logo" href="/" aria-label="munus home">munus</a>
-    <a class="back" href="/reel#work"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M13 7H1.5M6 2.5 1.5 7 6 11.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>the reel</a>
+    <div class="bar-r"><button class="ctog" id="color-btn" type="button" aria-pressed="false" aria-label="Colour mode"><span class="ctog-dot" aria-hidden="true"></span><span class="ctog-t">colour</span></button><a class="back" href="/reel#work"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M13 7H1.5M6 2.5 1.5 7 6 11.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>the reel</a></div>
   </div>
 </header>
 
@@ -112,6 +113,7 @@
     return;
   }
   var w=WORK[i],n=WORK.length,nx=WORK[(i+1)%n];
+  page.setAttribute('style',accent(w.tags[0]));
   document.title='munus — '+w.title;
 
   page.innerHTML=
@@ -156,6 +158,18 @@
   }
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
   update();
+})();
+</script>
+<script>
+/* colour mode, shared with the main site through localStorage */
+(function(){
+  var root=document.documentElement,b=document.getElementById('color-btn');
+  b.setAttribute('aria-pressed',String(root.dataset.color==='on'));
+  b.addEventListener('click',function(){
+    var on=root.dataset.color!=='on';if(on)root.dataset.color='on';else delete root.dataset.color;
+    b.setAttribute('aria-pressed',String(on));try{localStorage.setItem('munus-color',on?'on':'off')}catch(e){}
+    if(window.__repaint)window.__repaint();
+  });
 })();
 </script>
 </body>

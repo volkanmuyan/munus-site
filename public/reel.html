@@ -11,6 +11,7 @@
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0A0A0A">
+<script>try{if(localStorage.getItem("munus-color")==="on")document.documentElement.dataset.color="on"}catch(e){}</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="munus">
 <meta property="og:title" content="munus — selected work">
@@ -32,7 +33,7 @@
 <header class="bar">
   <div class="wrap bar-in">
     <a class="logo" href="/" aria-label="munus home">munus</a>
-    <span class="tc" aria-hidden="true"><b></b><span id="tc">00:00:00:00</span></span>
+    <div class="bar-r"><span class="tc" aria-hidden="true"><b></b><span id="tc">00:00:00:00</span></span><button class="ctog" id="color-btn" type="button" aria-pressed="false" aria-label="Colour mode"><span class="ctog-dot" aria-hidden="true"></span><span class="ctog-t">colour</span></button></div>
   </div>
 </header>
 
@@ -109,6 +110,8 @@
 <script>
 (function(){
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* the intro field follows the colour mode */
+  function TH(){return document.documentElement.dataset.color==='on'?{bg:'#F4F3EF',fade:'rgba(244,243,239,.075)',ink:'rgba(76,125,217,.85)'}:{bg:'#0A0A0A',fade:'rgba(10,10,10,.075)',ink:'rgba(243,243,241,.6)'}}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function pad(n){return (n<10?'0':'')+n}
 
@@ -122,7 +125,7 @@
     if(/\.(mp4|webm)$/i.test(m))media='<video src="'+esc(m)+'" muted loop playsinline preload="metadata"></video>';
     else if(m)media='<img src="'+esc(m)+'" alt="" loading="lazy" decoding="async">';
     else media='<div class="art" style="--a:'+(100+i*37)+'deg;--x:'+(30+i*13%60)+'%;--y:'+(25+i*17%50)+'%"></div><span class="big" aria-hidden="true">'+pad(i+1)+'</span><span class="ph-tag">image / video</span>';
-    return '<article class="scene" data-i="'+i+'" aria-labelledby="w'+i+'"><div class="wrap scene-in">'+
+    return '<article class="scene" data-i="'+i+'" style="'+accent(w.tags[0])+'" aria-labelledby="w'+i+'"><div class="wrap scene-in">'+
       '<div class="copy">'+
         '<p class="idx rv"><b>'+pad(i+1)+' / '+pad(total)+'</b>'+esc(w.tags[0]||'')+'</p>'+
         '<h2 id="w'+i+'"><span class="mask"><span style="--d:.08s">'+esc(w.title)+'</span></span></h2>'+
@@ -208,10 +211,10 @@
   function noise(x,y,z){var X=Math.floor(x)&255,Y=Math.floor(y)&255,Z=Math.floor(z)&255;x-=Math.floor(x);y-=Math.floor(y);z-=Math.floor(z);
     var u=fd(x),v=fd(y),w=fd(z),A=perm[X]+Y,AA=perm[A]+Z,AB=perm[A+1]+Z,B=perm[X+1]+Y,BA=perm[B]+Z,BB=perm[B+1]+Z;
     return lp(lp(lp(gr(perm[AA],x,y,z),gr(perm[BA],x-1,y,z),u),lp(gr(perm[AB],x,y-1,z),gr(perm[BB],x-1,y-1,z),u),v),lp(lp(gr(perm[AA+1],x,y,z-1),gr(perm[BA+1],x-1,y,z-1),u),lp(gr(perm[AB+1],x,y-1,z-1),gr(perm[BB+1],x-1,y-1,z-1),u),v),w)}
-  function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(devicePixelRatio||1,W<700?2:1.5);cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);c.fillStyle='#0A0A0A';c.fillRect(0,0,W,H);
+  function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(devicePixelRatio||1,W<700?2:1.5);cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);c.fillStyle=TH().bg;c.fillRect(0,0,W,H);
     N=Math.min(2200,Math.round(W*H/650));P=[];for(var i=0;i<N;i++)P.push([Math.random()*W,Math.random()*H,Math.random()*240])}
   function frame(k){
-    c.fillStyle='rgba(10,10,10,.075)';c.fillRect(0,0,W,H);c.strokeStyle='rgba(243,243,241,.6)';c.lineWidth=.8;c.beginPath();
+    var th=TH();c.fillStyle=th.fade;c.fillRect(0,0,W,H);c.strokeStyle=th.ink;c.lineWidth=.8;c.beginPath();
     for(var i=0;i<N;i++){var p=P[i],x=p[0],y=p[1],a=noise(x*.0016,y*.0016,t*.00006)*Math.PI*2.8,vx=Math.cos(a)*1.7*k,vy=Math.sin(a)*1.7*k,dx=x-mx,dy=y-my,d2=dx*dx+dy*dy;
       if(d2<40000){var d=Math.sqrt(d2)||1,f=(1-d/200)*4*k;vx+=dx/d*f;vy+=dy/d*f}
       c.moveTo(x,y);x+=vx;y+=vy;c.lineTo(x,y);if(x<0||x>W||y<0||y>H||(p[2]+=k)>240){x=Math.random()*W;y=Math.random()*H;p[2]=0}p[0]=x;p[1]=y}
@@ -220,6 +223,7 @@
   var last=0,raf=0;
   function tick(now){var k=Math.min(now-(last||now),50)/16.67;last=now;t+=k*16.67;frame(k||1);raf=run?requestAnimationFrame(tick):0}
   size();
+  window.__repaint=function(){size();if(reduce){for(var i=0;i<90;i++){t+=16.67;frame(1)}}};
   if(reduce){for(var i=0;i<90;i++){t+=16.67;frame(1)}}
   else{
     new IntersectionObserver(function(es){run=es[0].isIntersecting;cancelAnimationFrame(raf);last=0;if(run)raf=requestAnimationFrame(tick)}).observe(cv);
@@ -230,6 +234,18 @@
       intro.addEventListener('pointerleave',function(){mx=my=-1e4});
     }
   }
+})();
+</script>
+<script>
+/* colour mode, shared with the main site through localStorage */
+(function(){
+  var root=document.documentElement,b=document.getElementById('color-btn');
+  b.setAttribute('aria-pressed',String(root.dataset.color==='on'));
+  b.addEventListener('click',function(){
+    var on=root.dataset.color!=='on';if(on)root.dataset.color='on';else delete root.dataset.color;
+    b.setAttribute('aria-pressed',String(on));try{localStorage.setItem('munus-color',on?'on':'off')}catch(e){}
+    if(window.__repaint)window.__repaint();
+  });
 })();
 </script>
 </body>

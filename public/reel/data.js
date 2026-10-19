@@ -65,3 +65,9 @@ var PEOPLE=[
   {name:'Name Surname',role:'intelligence & research',prev:'Previously: Role at Organisation',yrs:'00 yrs',img:'/team/04.webp'}
 ];
 /* ===== end of content ===== */
+
+/* colour mode: each expertise has its own accent (same palette as the main site) */
+function accent(tag){
+  var k={'brand & marketing':'brand','creative & content':'creative','events & experiences':'events','corporate & public affairs':'corporate','intelligence & research':'research','advisory':'advisory'}[tag]||'brand';
+  return '--acc:var(--c-'+k+');--acc-t:var(--t-'+k+')';
+}

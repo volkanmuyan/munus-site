@@ -45,12 +45,13 @@ img,video{max-width:100%;display:block}
 .in .mask > span,.mask.in > span{transform:none}
 
 /* top bar */
-.bar{position:fixed;inset:0 0 auto 0;z-index:20;padding-top:env(safe-area-inset-top,0px);mix-blend-mode:difference;color:#fff;pointer-events:none}
+.bar{position:fixed;inset:0 0 auto 0;z-index:20;padding-top:env(safe-area-inset-top,0px);color:var(--light);pointer-events:none}
+.bar-r{display:flex;align-items:center;gap:18px;pointer-events:auto}
 .bar-in{height:var(--bar);display:flex;align-items:center;justify-content:space-between;gap:24px}
 .bar a,.bar span{pointer-events:auto}
 .logo{display:inline-flex;align-items:center;min-height:44px;font-size:28px;font-weight:700;line-height:1;letter-spacing:-.055em;text-decoration:none}
 .tc{font-size:14px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
-.tc b{display:inline-block;width:8px;height:8px;margin-right:10px;border-radius:50%;background:#fff;vertical-align:1px;animation:blink 1.6s steps(2) infinite}
+.tc b{display:inline-block;width:8px;height:8px;margin-right:10px;border-radius:50%;background:currentColor;vertical-align:1px;animation:blink 1.6s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
 .rail{position:fixed;left:0;top:0;z-index:21;width:100%;height:3px;background:var(--light);transform-origin:0 50%;transform:scaleX(var(--p,0))}
 
@@ -195,3 +196,37 @@ a.media:hover > img,a.media:hover > video,a.media:hover > .art{scale:1.04}
   .mask > span,.rv{transform:none;opacity:1}
   .media{clip-path:none}
 }
+
+/* ---------- colour mode: light theme, one accent per expertise (same palette as the main site) ---------- */
+:root{
+  --c-brand:#4C7DD9;--c-creative:#CA564B;--c-events:#C06400;--c-corporate:#009956;--c-research:#9565C7;--c-advisory:#0096B1;
+  --t-brand:#E8F1FF;--t-creative:#FFEBE7;--t-events:#FCEDE2;--t-corporate:#E5F5EB;--t-research:#F3EDFC;--t-advisory:#E0F4F9;
+  --cm-bg:#F4F3EF;
+}
+.ctog{display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px 0 8px;border:1.5px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(10,10,10,.35);color:#F3F3F1;font:500 14px/1 var(--font);cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:border-color .3s,background .3s,color .3s}
+.ctog-dot{width:24px;height:24px;border-radius:50%;background:conic-gradient(var(--c-brand),var(--c-creative),var(--c-events),var(--c-corporate),var(--c-advisory),var(--c-research),var(--c-brand));filter:grayscale(1) brightness(1.4);transition:filter .5s,transform .8s var(--ease)}
+.ctog[aria-pressed="true"] .ctog-dot{filter:none;transform:rotate(180deg)}
+html[data-color="on"] .ctog{background:rgba(244,243,239,.7);border-color:rgba(10,10,10,.18);color:#0A0A0A}
+body,.reelbar,.scene,.tools-row li,.who-row{transition:background .5s,color .5s,border-color .5s}
+html[data-color="on"]{--light:#0A0A0A;--line-on-dark:rgba(10,10,10,.16);--on-dark-muted:#5C5C5C;--veil:rgba(244,243,239,.9);--dark-2:#ECEAE4;--muted:#A8A8A8}
+html[data-color="on"] body{background:var(--cm-bg)}
+html[data-color="on"] .rail{background:linear-gradient(90deg,var(--c-brand),var(--c-creative),var(--c-events),var(--c-corporate),var(--c-advisory),var(--c-research))}
+html[data-color="on"] .intro-shade{background:linear-gradient(to top,rgba(244,243,239,.9),rgba(244,243,239,0) 60%),linear-gradient(to right,rgba(244,243,239,.7),rgba(244,243,239,.1) 70%)}
+html[data-color="on"] .reelbar{background:linear-gradient(to top,rgba(244,243,239,.95),rgba(244,243,239,0))}
+html[data-color="on"] .btn-solid{background:#0A0A0A;color:var(--cm-bg)}
+html[data-color="on"] .btn-solid:hover{background:transparent;border-color:#0A0A0A;color:#0A0A0A}
+html[data-color="on"] .btn-line:hover,html[data-color="on"] .media .open{background:#0A0A0A;color:var(--cm-bg)}
+html[data-color="on"] .logo-item img,html[data-color="on"] .tools-row img{filter:brightness(0)}
+html[data-color="on"] .tools-row li:hover{background:rgba(10,10,10,.04);border-color:rgba(10,10,10,.4)}
+html[data-color="on"] .who-row:hover{background:rgba(10,10,10,.03)}
+/* the work takes its expertise colour */
+html[data-color="on"] [style*="--acc"] .idx b{color:var(--acc)}
+html[data-color="on"] .art{background:
+  repeating-linear-gradient(var(--a,115deg),color-mix(in srgb,var(--acc,var(--c-brand)) 26%,transparent) 0 1.5px,transparent 1.5px 14px),
+  radial-gradient(circle at var(--x,70%) var(--y,40%),color-mix(in srgb,var(--acc,var(--c-brand)) 32%,transparent),transparent 55%),var(--acc-t,var(--t-brand))}
+html[data-color="on"] .media .big,html[data-color="on"] .p-hero .big{-webkit-text-stroke:1.5px var(--acc,var(--c-brand))}
+html[data-color="on"] .num:nth-child(1) b{color:var(--c-brand)}
+html[data-color="on"] .num:nth-child(2) b{color:var(--c-creative)}
+html[data-color="on"] .num:nth-child(3) b{color:var(--c-events)}
+html[data-color="on"] .end h2 .orig{color:var(--c-brand)}
+html[data-color="on"] .next b{color:var(--acc,#0A0A0A)}
