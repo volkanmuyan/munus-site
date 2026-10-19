@@ -50,7 +50,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 ## Open items before launch
 
-- [ ] Real hero videos → replace `public/videos/hero-1.mp4 … hero-4.mp4` and add `hero-5.mp4`, `hero-6.mp4` (slides 5–6 reuse hero-2/hero-4 for now) (1920×1080, muted, 8–15 s, 2–6 MB; also export a poster frame for each as `hero-N.webp` — current posters are first frames of the placeholder videos).
+- [ ] Hero: the six slides are generative canvas scenes ("hero art" in index.html), one per expertise — approve or swap any for real footage. The old placeholder videos in `public/videos/` are no longer used.
 - [ ] Team: names, titles, photos (portrait, ~4:5), emails; QR codes are generated from these (vCard).
 - [ ] Real London address — the site currently shows a made-up placeholder.
 - [ ] munus originals projects.
