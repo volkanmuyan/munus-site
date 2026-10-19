@@ -67,6 +67,16 @@
     <div class="marquee" id="marquee" aria-label="Agencies and institutions"></div>
   </section>
 
+  <section class="tools" aria-labelledby="tools-h">
+    <div class="wrap io">
+      <div class="tools-head">
+        <p class="label rv" id="tools-h">platforms we work on</p>
+        <p class="tools-note rv" style="--d:.1s">The platforms and tools we use every day. Listed for context, not as a partnership or endorsement.</p>
+      </div>
+      <ul class="tools-row" id="tools"></ul>
+    </div>
+  </section>
+
   <section class="people" aria-labelledby="people-h">
     <div class="wrap io">
       <p class="label rv">the people</p>
@@ -125,10 +135,13 @@
     '</div></article>';
   }).join('');
   var row=PLACES.map(function(p){
-    return '<span class="logo-item" title="'+esc(p.name)+'"><img src="'+esc(p.logo)+'" alt="'+esc(p.name)+'" style="--h:'+p.h+'px" loading="lazy" decoding="async">'+(p.label?'<em>'+esc(p.label)+'</em>':'')+'</span>';
+    return '<span class="logo-item" title="'+esc(p.name)+'" style="--h:'+p.h+'px"><img src="'+esc(p.logo)+'" alt="'+esc(p.name)+'" loading="lazy" decoding="async">'+(p.label?'<em>'+esc(p.label)+'</em>':'')+'</span>';
   }).join('');
   document.getElementById('marquee').innerHTML=
-    '<div class="track logos" style="--dur:48s">'+row+row.replace(/ alt="[^"]*"/g,' alt=""')+'</div>';
+    '<div class="track logos" style="--dur:56s">'+row+row.replace(/ alt="[^"]*"/g,' alt=""')+'</div>';
+  document.getElementById('tools').innerHTML=PLATFORMS.map(function(p,i){
+    return '<li class="rv" style="--d:'+(i*.06)+'s"><img src="'+esc(p.icon)+'" alt="" width="24" height="24" loading="lazy">'+esc(p.name)+'</li>';
+  }).join('');
   document.getElementById('who').innerHTML=PEOPLE.map(function(p,i){
     return '<li class="who-row rv" style="--d:'+(i*.08)+'s"><img src="'+esc(p.img)+'" alt="" width="72" height="72" loading="lazy">'+
       '<div><b>'+esc(p.name)+'</b><div class="role">'+esc(p.role)+'</div></div><span class="prev">'+esc(p.prev)+'</span><span class="yrs">'+esc(p.yrs)+'</span></li>';

@@ -47,6 +47,17 @@ var PLACES=[
   {name:'ELDER',logo:'/logos/elder.svg',h:44}
 ];
 
+/* Platforms the team works on. Not partner badges: move a platform to an "official partner" list only once munus is accepted into its programme. */
+var PLATFORMS=[
+  {name:'Meta',icon:'/logos/platforms/meta.svg'},
+  {name:'Instagram',icon:'/logos/platforms/instagram.svg'},
+  {name:'TikTok',icon:'/logos/platforms/tiktok.svg'},
+  {name:'YouTube',icon:'/logos/platforms/youtube.svg'},
+  {name:'LinkedIn',icon:'/logos/platforms/linkedin.svg'},
+  {name:'Google',icon:'/logos/platforms/google.svg'},
+  {name:'Claude',icon:'/logos/platforms/claude.svg'}
+];
+
 var PEOPLE=[
   {name:'Name Surname',role:'brand & marketing',prev:'Previously: Role at Organisation',yrs:'00 yrs',img:'/team/01.webp'},
   {name:'Name Surname',role:'creative & content',prev:'Previously: Role at Organisation',yrs:'00 yrs',img:'/team/02.webp'},
