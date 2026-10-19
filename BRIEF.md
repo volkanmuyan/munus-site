@@ -44,8 +44,10 @@ Sectors: energy & utilities · construction & building materials · public secto
 ## Colour mode
 
 - Opt-in toggle ("colour") in the top bar; black and white stays the default. The choice is remembered per browser (localStorage `munus-color`).
-- One colour per expertise: brand & marketing `#3D4BFF`, creative & content `#FF2E9A`, events & experiences `#FF6A13`, corporate & public affairs `#00D65A`, intelligence & research `#C9A8FF`, advisory `#FFD400` (CSS vars `--c-*`).
-- Used for: a colour band sweeping through the "munus" wordmark (top bar and footer), hero art (each slide in its expertise colour), the expertise card, team card faces, originals band (research lilac), contact band (brand blue), menu (corporate green), the reading bar.
+- Colour mode is a light theme: warm off-white `#F4F3EF` dominates, colour is used as an accent. The dark areas (hero, hello, contact, top bar) flip their tokens; the footer stays black.
+- One accent per expertise, all at the same OKLCH lightness and chroma (~0.60 / 0.15) so they sit together: brand & marketing `#4C7DD9`, creative & content `#CA564B`, events & experiences `#C06400`, corporate & public affairs `#009956`, intelligence & research `#9565C7`, advisory `#0096B1`. Light tints (`--t-*`) for surfaces.
+- Used for: hero art (each slide in its colour, on the light background), the expertise card, team cards (tinted faces, coloured accents), originals (research tint), "say hello." (brand), menu link hovers, the reading bar.
+- Wordmark: a coloured "snake" runs along the letter strokes of "munus" (top bar and footer), one expertise colour per pass, drawn on a canvas over the text. Static when motion is paused.
 
 ## Contact data
 
