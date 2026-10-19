@@ -60,3 +60,11 @@ Sectors: energy & utilities · construction & building materials · public secto
 - [ ] Vercel Web Analytics: the script is in the page; enable it in the Vercel project (Analytics tab). It is cookieless.
 - [ ] Favicon, Open Graph image, page title/description check.
 - [ ] Privacy / cookie notice (KVKK, UK GDPR) if analytics are added.
+
+## Unlisted showreel (`/reel`)
+
+- `public/reel.html`: dark, scroll-driven showreel of work the team did *before* munus. Not linked from the site; shared by URL only. `noindex` meta plus an `X-Robots-Tag` header for `/reel` in vercel.json — keep both after launch.
+- Content lives in the arrays at the top of its script (`NUMBERS`, `WORK`, `PLACES`, `PEOPLE`). Project media go in `public/work/` (image or mp4); an empty `media` shows a placeholder.
+- Institutions listed (names only, no logos): Oracle, Koç, TikTok, Uludağ Enerji, Astor, TÜREB, TÜREK, ALÇIDER, ELDER.
+- The credit line says the work was done in previous roles; keep it. Use client logos only with permission.
+- [ ] Fill in projects, numbers and people's previous roles.
