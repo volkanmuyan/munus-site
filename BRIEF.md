@@ -45,7 +45,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 - Opt-in toggle ("colour") in the top bar; black and white stays the default. The choice is remembered per browser (localStorage `munus-color`).
 - One colour per expertise: brand & marketing `#3D4BFF`, creative & content `#FF2E9A`, events & experiences `#FF6A13`, corporate & public affairs `#00D65A`, intelligence & research `#C9A8FF`, advisory `#FFD400` (CSS vars `--c-*`).
-- Used for: hero art (each slide in its expertise colour), the expertise card, team card faces, originals band (research lilac), contact band (brand blue), menu (corporate green), the reading bar.
+- Used for: a colour band sweeping through the "munus" wordmark (top bar and footer), hero art (each slide in its expertise colour), the expertise card, team card faces, originals band (research lilac), contact band (brand blue), menu (corporate green), the reading bar.
 
 ## Contact data
 

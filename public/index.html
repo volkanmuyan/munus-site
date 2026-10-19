@@ -435,6 +435,10 @@ html[data-color="on"] #originals{background:var(--c-research)}
 html[data-color="on"] .contact{background:var(--c-brand)}
 html[data-color="on"] .contact .reach div{border-top-color:rgba(255,255,255,.35)}
 html[data-color="on"] .menu{background:var(--c-corporate)}
+/* a band of the six colours sweeps through the wordmark, then rests */
+html[data-color="on"] .bar .logo,html[data-color="on"] .foot-word{background:linear-gradient(90deg,var(--light) 0 31%,var(--c-brand) 36%,var(--c-creative) 42%,var(--c-events) 48%,var(--c-advisory) 54%,var(--c-corporate) 60%,var(--c-research) 65%,var(--light) 70% 100%) 0 0 / 300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sweep 5.5s cubic-bezier(.45,.05,.35,1) infinite}
+html[data-color="on"] .foot-word{animation-delay:1.2s}
+@keyframes sweep{0%{background-position:100% 0}55%,100%{background-position:0 0}}
 html[data-color="on"] .menu-top span,html[data-color="on"] .menu-side span{color:rgba(10,10,10,.62)}
 
 /* ---------- narrow ---------- */
