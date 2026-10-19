@@ -1027,24 +1027,23 @@ html.menu-lock{overflow:hidden}
         }
         c.stroke();
       }},
-      /* 02 creative & content: the munus arch and cup, morphing into waves */
-      {init:function(s,W,H){s.r=cl(W/40,16,38)},
+      /* 02 creative & content: a ribbon of threads, one 3D Lissajous figure drawn many times */
+      {init:function(s,W,H){s.rx=0;s.ry=0},
       frame:function(c,s,W,H,t,k,mx,my){
         c.fillStyle=BG;c.fillRect(0,0,W,H);
-        var r=s.r,pitch=r*4.4,L=r*2,cols=Math.ceil(W/(2*r))+1,rows=Math.ceil(H/pitch)+1,R=260;
-        c.lineWidth=r*.83;c.lineCap='butt';
-        for(var j=0;j<rows;j++){
-          var mid=j*pitch+r*.6;
-          c.strokeStyle=ink(j%2?.18:.55);c.beginPath();
-          for(var i=0;i<cols;i++){
-            var cx=i*2*r+r,v=noise(i*.21,j*.37,t*.00016)*3.2;
-            var dx=cx-mx,dy=mid+L*.4-my,d=Math.sqrt(dx*dx+dy*dy);
-            if(d<R)v=lp(v,-v-Math.sign(v||1)*.6,ss(1-d/R));
-            v=cl(v,-1,1);
-            var ry=r*Math.abs(v);
-            c.moveTo(cx-r,mid+L*v);c.lineTo(cx-r,mid);
-            if(ry<.5)c.lineTo(cx+r,mid);else c.ellipse(cx,mid,r,ry,0,Math.PI,0,v<0);
-            c.lineTo(cx+r,mid+L*v);
+        var cx=W*(W<700?.5:.64),cy=H*(W<700?.34:.44),A=Math.min(W,H)*(W<700?.36:.36),K=22,N=420;
+        var tx=mx>-1e3?(mx/W-.5)*1.6:0,ty=mx>-1e3?(my/H-.5)*1.2:0;
+        s.rx+=(tx-s.rx)*.04*k;s.ry+=(ty-s.ry)*.04*k;
+        var ya=t*.00018+s.rx,xa=.35+Math.sin(t*.00011)*.25+s.ry,cy1=Math.cos(ya),sy1=Math.sin(ya),cx1=Math.cos(xa),sx1=Math.sin(xa);
+        c.lineWidth=1;
+        for(var m=0;m<K;m++){
+          var ph=t*.00022+m*.045,q=m/(K-1);
+          c.strokeStyle=ink(.12+.5*Math.sin(q*Math.PI));c.beginPath();
+          for(var n=0;n<=N;n++){
+            var u=n/N*TAU,x=Math.sin(3*u+ph),y=Math.sin(2*u),z=Math.sin(5*u+ph*.6)*.7;
+            var x2=x*cy1+z*sy1,z2=z*cy1-x*sy1,y2=y*cx1-z2*sx1,z3=z2*cx1+y*sx1,f=1/(1.9-z3*.45);
+            var px=cx+x2*A*f*1.35,py=cy+y2*A*f*1.35;
+            if(n)c.lineTo(px,py);else c.moveTo(px,py);
           }
           c.stroke();
         }
