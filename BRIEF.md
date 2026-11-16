@@ -13,7 +13,7 @@ colours, type and motion. Rebuild or ship it without changing the design unless 
 | `#top` | Header | Wordmark "munus" (text, no logo mark). Transparent over the hero, dark veil after scrolling. Thin reading-progress bar. |
 | `#hero` | Hero | Full-viewport slider of generative B&W canvas scenes, 6 slides (one per expertise area), 7 s each, crossfade + slow zoom. Headline "a space of possibilities." Bottom bar: area name, `01 / 06` counter, progress segments, prev/next round buttons. Swipe and arrow keys. Pauses when the bottom bar is hovered, when off-screen, and when the menu is open. |
 | `#hello` | Positioning | Large statement: "munus is a creative agency built to open up possibilities for the brands and institutions we work with." Supporting line + "meet the team" link. |
-| `#team` | Team | Four ID-badge cards hanging from one curved wire, each on its own string, slowly swaying. Hover: card tilts toward the pointer and gets a silver-foil sheen. Click: 3D flip to the back (title, city, one line, focus areas, email, vCard QR). Horizontal scroll on phones. |
+| `#team` | Team & culture | Label "team & culture". Four ID-badge cards hanging from one curved wire, each on its own string, slowly swaying. Hover: card tilts toward the pointer and gets a silver-foil sheen. Click: 3D flip to the back (title, city, one line, previously, focus areas, email, vCard QR). Horizontal scroll on phones. Below: **life at munus**, a full-bleed B&W photo strip that pans endlessly (dot-screen overlay, faded edges, pauses on hover/motion off); then **culture**, "what's on the table." with the perks as pills (first one highlighted; 2-column grid on phones; expertise colours on hover in colour mode) and a "pull up a chair" mailto link. Last: **platforms**, "the tools on the table.": two rows of logos side by side, no boxes (logos grey and half-transparent, original colours on hover, staggered reveal) — **data & technology** (the same 16 as the reference: OpenAI, Nielsen, McKinsey & Company, Google Trends, Claude, Sprout Social, Accenture, Scenario, Business Insider, Gemini, Cursor, SurveyMonkey, ElevenLabs, GWI, Hootsuite, HypeAuditor) and **marketing & advertising** (Meta, Instagram, Google Ads, YouTube, TikTok, LinkedIn, X, Spotify, Yandex, HubSpot). Wordmarks in `public/logos/brands/`, from Wikimedia Commons or the brand's own website (Sprout Social, Cursor, GWI, Hootsuite, HypeAuditor, Scenario); Google Trends and Google Ads are a symbol + name, X is its symbol. Line under the heading: "Listed for context, not as an official partnership or endorsement." |
 | `#expertise` | What we do | Six areas in an accordion; left card shows the big number (01–06) and name, tone changes per area. "sectors" row underneath. |
 | `#originals` | munus *originals* | "originals" is set thin italic (Hanken Grotesk 200 italic). Placeholder for munus's own projects. |
 | `#contact` | Contact | "say hello." + email and two addresses (Ankara, London). |
@@ -51,7 +51,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 ## Contact data
 
-- Email: hello@munus.com (big, in the contact section)
+- Email: hello@wearemunus.co (big, in the contact section). Mailbox not set up yet: planned on Google Workspace.
 - Office addresses live in the footer ("offices" column), not in the contact section.
 - Ankara: ODTÜ Teknokent, 06800 Çankaya, Ankara, Türkiye (no building/unit yet)
 - London: 12 Sample Street, London EC1X 0XX — **made-up placeholder, replace before launch**
@@ -59,11 +59,15 @@ Sectors: energy & utilities · construction & building materials · public secto
 ## Open items before launch
 
 - [ ] Hero: the six slides are generative canvas scenes ("hero art" in index.html), one per expertise — approve or swap any for real footage. The old placeholder videos in `public/videos/` are no longer used.
-- [ ] Team: names, titles, photos (portrait, ~4:5), emails; QR codes are generated from these (vCard).
+- [ ] Team: names, titles, photos (portrait, ~4:5), emails, previous agencies ("previously" line on the card back); QR codes are generated from these (vCard).
+- [ ] Life at munus strip: 4+ real team photos (events, studio, award nights) into `public/culture/`, landscape ~1600px; they are shown greyscale. Replace the `.lf` placeholders and remove the "placeholder" tag.
+- [ ] Platform lists: confirm the tools and ad platforms munus really uses. Call them "partners" only for actual partner programmes; until then keep the "listed for context" line.
+- [ ] Culture perks: the list is a draft (adapted from a reference agency) — confirm which ones munus actually offers before launch.
 - [ ] Real London address — the site currently shows a made-up placeholder.
 - [ ] munus originals projects.
 - [ ] Confirm the Helvena licence covers web embedding.
-- [ ] Domain (munus.com?) and the hello@ mailbox.
+- [x] Domain: **wearemunus.co** (bought on Vercel 2026-11-16, renews yearly at $24.80; Vercel DNS). `wearemunus.co` + `www` → this site, `lens.` → munus lens, `office.` → munus office. munus.agency may be added later as a redirect.
+- [ ] hello@ and personal mailboxes on Google Workspace (MX/SPF/DKIM records go into Vercel DNS).
 - [ ] At launch: remove the `noindex` meta in index.html and the `X-Robots-Tag` header in vercel.json; then add sitemap.xml, robots.txt, Organization JSON-LD, absolute og:image URL, and submit to Search Console.
 - [ ] Vercel Web Analytics: the script is in the page; enable it in the Vercel project (Analytics tab). It is cookieless.
 - [ ] Favicon, Open Graph image, page title/description check.
