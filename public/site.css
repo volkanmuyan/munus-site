@@ -562,7 +562,7 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 /* team: one flat grid; B&W photos with a hand-drawn doodle in the person's expertise colour */
 .x-brand{--dc:var(--c-brand)}.x-creative{--dc:var(--c-creative)}.x-events{--dc:var(--c-events)}
 .x-corporate{--dc:var(--c-corporate)}.x-research{--dc:var(--c-research)}.x-advisory{--dc:var(--c-advisory)}
-.tm-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(36px,4vw,56px) clamp(14px,1.6vw,24px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
+.tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(36px,4vw,56px) clamp(14px,1.6vw,24px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
 .tm{display:flex;flex-direction:column;gap:4px}
 .tm.in{animation:rise .9s var(--ease) backwards;animation-delay:var(--d,0s)}
 .tm-ph{position:relative;aspect-ratio:4/5;margin-bottom:12px;border-radius:14px;overflow:hidden;background:var(--grey-light)}
@@ -580,7 +580,7 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 .motion-off .doodle *{stroke-dashoffset:0}
 @media (prefers-reduced-motion:reduce){.doodle *{stroke-dashoffset:0;animation:none!important}}
 .tm-name{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0;font-weight:700;font-size:clamp(20px,1.6vw,24px);line-height:1.1;letter-spacing:-.035em}
-.tm-tag{display:inline-flex;align-items:center;min-height:22px;padding:0 9px;border-radius:999px;background:var(--ink);color:var(--light);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.tm-tag{display:inline-flex;align-items:center;min-height:22px;padding:0 9px;white-space:nowrap;border-radius:999px;background:var(--ink);color:var(--light);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
 html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-role{font-size:15px;font-weight:500}
 .tm-line{margin-top:4px;font-size:14px;line-height:1.45;color:var(--muted)}
@@ -606,8 +606,6 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
 
 @media (max-width:1100px){
   .tm-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .tm-you{grid-column:1 / -1}
-  .tm-you-in{aspect-ratio:auto;min-height:220px}
   .ways{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:900px){

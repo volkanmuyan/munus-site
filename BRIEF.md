@@ -61,7 +61,14 @@ Sectors: energy & utilities · construction & building materials · public secto
 `public/about.html`. Shares `site.css` and `site.js` with the home page (both were moved out of index.html; the script skips the hero/accordion parts when they are absent). Linked from the menu ("about"), the footer and "meet the whole team" in the home team section.
 
 1. **Intro** (dark): "one table. many hands." + short agency paragraph + facts (4 partners, 5 in the studio, 6 areas, 2 cities).
-2. **Team** — "everyone at the table.": one flat grid (5 columns; 3 on tablet, 2 on phones), partners first and marked only with a small "partner" tag (no separate founders tier). 4 partners (Volkan, Semih, Ceren, Çağlar), then Art Director, Graphic Designer, Motion Designer, Spatial Design Lead and 3D & Spatial Designer (the two architects, under events & experiences), then an "open seat — you?" card. Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (brand: loop + sound waves; creative: crown/frame/squiggle/play; corporate: speech bubble; research: magnifier + rising arrow; events: floor plan / wireframe cube). Once real photos are in, re-place each doodle on the photo (e.g. trace a collar, glasses, a gesture).
+2. **Team** — "everyone at the table.": one flat grid (4 columns; 3 on tablet, 2 on phones), partners first and marked only with a small tag (no separate founders tier), then the studio, then an "open seat — you?" card.
+   - Volkan — Managing Partner · Chief Strategy Officer (advisory colour)
+   - Semih — Partner · Executive Creative Director (creative)
+   - Ceren — Partner · Head of Growth & Client Relations: sales, marketing, client relations (brand)
+   - Çağlar — Partner · Editor-in-Chief (corporate)
+   - Açelya — Creative Writer & Social Media Lead (brand)
+   - Name Surname — Art Director, Graphic Designer, Motion Designer (creative); Spatial Design Lead and 3D & Spatial Designer, the two architects (events)
+   Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).
 3. **How we work** — "the way we sit.": four principles (draft).
 4. **Culture** — "life at munus." photo strip + the perks list (same blocks as on the home page; keep both in step).
 5. **Contact** — "pull up a chair." new business / join the team.
@@ -73,7 +80,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 - [ ] Life at munus strip: 4+ real team photos (events, studio, award nights) into `public/culture/`, landscape ~1600px; they are shown greyscale. Replace the `.lf` placeholders and remove the "placeholder" tag.
 - [ ] Platform lists: confirm the tools and ad platforms munus really uses. Call them "partners" only for actual partner programmes; until then keep the "listed for context" line.
 - [ ] Culture perks: the list is a draft (adapted from a reference agency) — confirm which ones munus actually offers before launch.
-- [ ] About page: confirm each partner's area/title (the current mapping is a draft in the home page card order), surnames, lines, focus, "previously", cities; studio names and photos; the four "how we work" principles.
+- [ ] About page: partner titles are set (see above); still to confirm: surnames, lines, focus, "previously", cities; studio names and photos; the four "how we work" principles.
 - [ ] Real London address — the site currently shows a made-up placeholder.
 - [ ] munus originals projects.
 - [ ] Confirm the Helvena licence covers web embedding.
