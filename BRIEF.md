@@ -69,6 +69,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Açelya — Creative Writer & Social Media Lead (brand)
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
    - Name Surname — Media Relations Specialist (corporate)
+   - Name Surname — Research & Sustainability Lead: sector reports, surveys, ESG/sustainability reporting (research)
    - Kedito (tuxedo cat, "Office Cat" tag) — Chief Morale Officer; also Executive Box Director and Head of Purr-formance. Photo `team/kedito.webp` is a stand-in: "Tuxedo cat, front view" by Ryan Schwark, Wikimedia Commons, CC0. Swap for the real cat.
    - Name Surname — Art Director, Graphic Designer, Motion Designer (creative); Spatial Design Lead and 3D & Spatial Designer, the two architects (events)
    Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).
