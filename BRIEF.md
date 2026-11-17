@@ -61,11 +61,10 @@ Sectors: energy & utilities · construction & building materials · public secto
 `public/about.html`. Shares `site.css` and `site.js` with the home page (both were moved out of index.html; the script skips the hero/accordion parts when they are absent). Linked from the menu ("about"), the footer and "meet the whole team" in the home team section.
 
 1. **Intro** (dark): "one table. many hands." + short agency paragraph + facts (4 partners, 5 in the studio, 6 areas, 2 cities).
-2. **Partners** — "the people who set the table.": four wide cards (portrait left; number, city, name, "Partner" pill + area, one line, focus, previously, email). Volkan, Semih, Ceren, Çağlar. In colour mode each card takes its area's tint.
-3. **Studio** — "the hands that make it real.": Art Director, Graphic Designer, Motion Designer (creative & content); Spatial Design Lead and 3D & Spatial Designer (the two architects, under events & experiences); plus an "open seat" card. munus glyphs stand in for photos.
-4. **How we work** — "the way we sit.": four principles (draft).
-5. **Culture** — "life at munus." photo strip + the perks list (same blocks as on the home page; keep both in step).
-6. **Contact** — "pull up a chair." new business / join the team.
+2. **Team** — "everyone at the table.": one flat grid (5 columns; 3 on tablet, 2 on phones), partners first and marked only with a small "partner" tag (no separate founders tier). 4 partners (Volkan, Semih, Ceren, Çağlar), then Art Director, Graphic Designer, Motion Designer, Spatial Design Lead and 3D & Spatial Designer (the two architects, under events & experiences), then an "open seat — you?" card. Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (brand: loop + sound waves; creative: crown/frame/squiggle/play; corporate: speech bubble; research: magnifier + rising arrow; events: floor plan / wireframe cube). Once real photos are in, re-place each doodle on the photo (e.g. trace a collar, glasses, a gesture).
+3. **How we work** — "the way we sit.": four principles (draft).
+4. **Culture** — "life at munus." photo strip + the perks list (same blocks as on the home page; keep both in step).
+5. **Contact** — "pull up a chair." new business / join the team.
 
 ## Open items before launch
 
