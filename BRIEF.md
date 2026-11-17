@@ -61,7 +61,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 `public/about.html`. Shares `site.css` and `site.js` with the home page (both were moved out of index.html; the script skips the hero/accordion parts when they are absent). Linked from the menu ("about"), the footer and "meet the whole team" in the home team section.
 
 1. **Intro** (dark): "one table. many hands." + short agency paragraph + facts (4 partners, 5 in the studio, 6 areas, 2 cities).
-2. **Team** — "everyone at the table.": one flat grid (4 columns; 3 on tablet, 2 on phones; on desktop the "you?" card spans the rest of the last row — re-check when the head count changes), partners first and marked only with a small tag (no separate founders tier), then the studio, then an "open seat — you?" card.
+2. **Team** — "everyone at the table.": one flat grid (4 columns; 3 on tablet, 2 on phones; 15 people + the "you?" card fill 4 full rows on desktop — re-check when the head count changes), partners first and marked only with a small tag (no separate founders tier), then the studio, then an "open seat — you?" card.
    - Volkan — Managing Partner · Chief Strategy Officer (advisory colour)
    - Semih — Partner · Executive Creative Director (creative)
    - Ceren — Partner · Head of Growth & Client Relations: sales, marketing, client relations (brand)
@@ -70,6 +70,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
    - Name Surname — Media Relations Specialist (corporate)
    - Name Surname — Research & Sustainability Lead: sector reports, surveys, ESG/sustainability reporting (research)
+   - Name Surname — Head of Data & Insights: very senior data analyst; media analysis, measurement, dashboards, munus lens (research)
    - Kedito (tuxedo cat, "Office Cat" tag) — Chief Morale Officer; also Executive Box Director and Head of Purr-formance. Photo `team/kedito.webp` is a stand-in: "Tuxedo cat, front view" by Ryan Schwark, Wikimedia Commons, CC0. Swap for the real cat.
    - Name Surname — Art Director, Graphic Designer, Motion Designer (creative); Spatial Design Lead and 3D & Spatial Designer, the two architects (events)
    Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).

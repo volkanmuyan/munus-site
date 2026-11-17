@@ -588,8 +588,7 @@ html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-you .tm-name{font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
-/* desktop: 14 people + the open seat in 4 columns, so the open seat spans the last 2. Re-check when the head count changes. */
-@media (min-width:1101px){.tm-you{grid-column:span 2}.tm-you-in{aspect-ratio:auto;height:100%;justify-content:center;padding:clamp(28px,3vw,48px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px)}.tm-you .tm-line{max-width:40ch;font-size:16px}}
+/* 15 people + the open seat = 4 full rows on desktop. If the head count changes, span .tm-you over the leftover columns on desktop (grid-column:span N; .tm-you-in aspect-ratio:auto). */
 
 /* how we work */
 .ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
