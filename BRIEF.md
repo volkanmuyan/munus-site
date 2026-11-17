@@ -67,6 +67,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Ceren — Partner · Head of Growth & Client Relations: sales, marketing, client relations (brand)
    - Çağlar — Partner · Editor-in-Chief (corporate)
    - Açelya — Creative Writer & Social Media Lead (brand)
+   - Kedito (tuxedo cat, "Office Cat" tag) — Chief Morale Officer; also Executive Box Director and Head of Purr-formance. Photo `team/kedito.webp` is a stand-in: "Tuxedo cat, front view" by Ryan Schwark, Wikimedia Commons, CC0. Swap for the real cat.
    - Name Surname — Art Director, Graphic Designer, Motion Designer (creative); Spatial Design Lead and 3D & Spatial Designer, the two architects (events)
    Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).
 3. **How we work** — "the way we sit.": four principles (draft).
