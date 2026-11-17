@@ -579,13 +579,13 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 .tm:hover .doodle{transform:rotate(-2.5deg) scale(1.03)}
 .motion-off .doodle *{stroke-dashoffset:0}
 @media (prefers-reduced-motion:reduce){.doodle *{stroke-dashoffset:0;animation:none!important}}
-.tm-name{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0;font-weight:700;font-size:clamp(20px,1.6vw,24px);line-height:1.1;letter-spacing:-.035em}
+.tm-name{margin:0;font-weight:500;font-size:clamp(19px,1.5vw,22px);line-height:1.15;letter-spacing:-.025em}
 .tm-tag{display:inline-flex;align-items:center;min-height:22px;padding:0 9px;white-space:nowrap;border-radius:999px;background:var(--ink);color:var(--light);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
 html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
-.tm-role{font-size:15px;font-weight:500}
+.tm-role{font-size:15px;font-weight:400;line-height:1.35;color:var(--muted)}
 .tm-line{margin-top:4px;font-size:14px;line-height:1.45;color:var(--muted)}
 .tm-you-in{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;aspect-ratio:4/5;padding:20px;border:1.5px dashed var(--grey);border-radius:14px}
-.tm-you .tm-name{font-size:clamp(36px,3.4vw,52px)}
+.tm-you .tm-name{font-weight:700;letter-spacing:-.045em;font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
 /* desktop: 16 people + the open seat in 4 columns, so the open seat runs the full last row as a wide banner. Re-check when the head count changes. */
