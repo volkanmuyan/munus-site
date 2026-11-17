@@ -62,7 +62,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 
 1. **Intro** (dark): "one table. many hands." + short agency paragraph + facts (4 partners, 5 in the studio, 6 areas, 2 cities).
 2. **Team** — "everyone at the table.": one flat grid (4 columns; 3 on tablet, 2 on phones; 15 people + the "you?" card fill 4 full rows on desktop — re-check when the head count changes), partners first and marked only with a small tag (no separate founders tier), then the studio, then an "open seat — you?" card.
-   - Volkan — Managing Partner · Chief Strategy Officer (advisory colour)
+   - Volkan — Managing Partner · Head of Strategy (advisory colour)
    - Semih — Partner · Executive Creative Director (creative)
    - Ceren — Partner · Head of Growth & Client Relations: sales, marketing, client relations (brand)
    - Çağlar — Partner · Editor-in-Chief (corporate)
