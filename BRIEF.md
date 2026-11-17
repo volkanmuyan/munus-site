@@ -56,6 +56,17 @@ Sectors: energy & utilities · construction & building materials · public secto
 - Ankara: ODTÜ Teknokent, 06800 Çankaya, Ankara, Türkiye (no building/unit yet)
 - London: 12 Sample Street, London EC1X 0XX — **made-up placeholder, replace before launch**
 
+## About page (`/about`)
+
+`public/about.html`. Shares `site.css` and `site.js` with the home page (both were moved out of index.html; the script skips the hero/accordion parts when they are absent). Linked from the menu ("about"), the footer and "meet the whole team" in the home team section.
+
+1. **Intro** (dark): "one table. many hands." + short agency paragraph + facts (4 partners, 5 in the studio, 6 areas, 2 cities).
+2. **Partners** — "the people who set the table.": four wide cards (portrait left; number, city, name, "Partner" pill + area, one line, focus, previously, email). Volkan, Semih, Ceren, Çağlar. In colour mode each card takes its area's tint.
+3. **Studio** — "the hands that make it real.": Art Director, Graphic Designer, Motion Designer (creative & content); Spatial Design Lead and 3D & Spatial Designer (the two architects, under events & experiences); plus an "open seat" card. munus glyphs stand in for photos.
+4. **How we work** — "the way we sit.": four principles (draft).
+5. **Culture** — "life at munus." photo strip + the perks list (same blocks as on the home page; keep both in step).
+6. **Contact** — "pull up a chair." new business / join the team.
+
 ## Open items before launch
 
 - [ ] Hero: the six slides are generative canvas scenes ("hero art" in index.html), one per expertise — approve or swap any for real footage. The old placeholder videos in `public/videos/` are no longer used.
@@ -63,6 +74,7 @@ Sectors: energy & utilities · construction & building materials · public secto
 - [ ] Life at munus strip: 4+ real team photos (events, studio, award nights) into `public/culture/`, landscape ~1600px; they are shown greyscale. Replace the `.lf` placeholders and remove the "placeholder" tag.
 - [ ] Platform lists: confirm the tools and ad platforms munus really uses. Call them "partners" only for actual partner programmes; until then keep the "listed for context" line.
 - [ ] Culture perks: the list is a draft (adapted from a reference agency) — confirm which ones munus actually offers before launch.
+- [ ] About page: confirm each partner's area/title (the current mapping is a draft in the home page card order), surnames, lines, focus, "previously", cities; studio names and photos; the four "how we work" principles.
 - [ ] Real London address — the site currently shows a made-up placeholder.
 - [ ] munus originals projects.
 - [ ] Confirm the Helvena licence covers web embedding.
