@@ -68,14 +68,14 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Çağlar — Partner · Editor-in-Chief (corporate)
    - Ulaş — Business Development Lead · Industrial & Engineering: mechanical engineer, sales/marketing for engineering firms, works with Ceren (brand)
    - Açelya — Creative Writer & Social Media Lead (brand)
-   - (3D card retitled) Name Surname — Architect / Creative Technologist · 3D & AI: architect, graphics + 3D, focus on AI (creative)
+   - Ozan Serkan Muyan — Architect / Creative Technologist · 3D & AI: architect, graphics + 3D, focus on AI (creative)
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
    - Name Surname — Media Relations Specialist (corporate)
    - Name Surname — Research & Sustainability Lead: sector reports, surveys, ESG/sustainability reporting (research)
    - Name Surname — Head of Data & Insights: very senior data analyst; media analysis, measurement, dashboards, munus lens (research)
    - Kedito (tuxedo cat, "Office Cat" tag) — Chief Morale Officer; also Executive Box Director and Head of Purr-formance. Photo `team/kedito.webp` is a stand-in: "Tuxedo cat, front view" by Ryan Schwark, Wikimedia Commons, CC0. Swap for the real cat.
    - Name Surname — Art Director, Graphic Designer, Motion Designer (creative); Spatial Design Lead and 3D & Spatial Designer, the two architects (events)
-   Photos are B&W (4:5); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).
+   Photos are B&W (4:5); for now every card without a photo reuses one of the four 3D placeholder avatars (team/01–04, spread so no row or column repeats); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).
 3. **How we work** — "the way we sit.": four principles (draft).
 4. **Culture** — "life at munus." photo strip + the perks list (same blocks as on the home page; keep both in step).
 5. **Contact** — "pull up a chair." new business / join the team.
