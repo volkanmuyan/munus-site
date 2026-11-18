@@ -68,6 +68,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Çağlar — Partner · Editor-in-Chief (corporate)
    - Ulaş — Business Development Lead · Industrial & Engineering: mechanical engineer, sales/marketing for engineering firms, works with Ceren (brand)
    - Açelya — Creative Writer & Social Media Lead (brand)
+   - (3D card retitled) Name Surname — Architect / Creative Technologist · 3D & AI: architect, graphics + 3D, focus on AI (creative)
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
    - Name Surname — Media Relations Specialist (corporate)
    - Name Surname — Research & Sustainability Lead: sector reports, surveys, ESG/sustainability reporting (research)
