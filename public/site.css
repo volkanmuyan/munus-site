@@ -586,8 +586,8 @@ html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-you .tm-name{font-weight:700;letter-spacing:-.045em;font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
-/* 12 people fill 4, 3 and 2 columns exactly, so the open seat runs a full row as a pill banner. Re-check when the head count changes. */
-.tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}
+/* 13 people: the open seat fills the rest of the last row (3 of 4 columns, 2 of 3, 1 of 2). Re-check when the head count changes. */
+.tm-you{grid-column:span 3}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}
 
 /* how we work */
 .ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
@@ -606,6 +606,7 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
 
 @media (max-width:1100px){
   .tm-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tm-you{grid-column:span 2}
   .ways{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:900px){
@@ -615,5 +616,5 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
   .ways{grid-template-columns:minmax(0,1fr)}
   .tm-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 12px}
   .tm-line{font-size:13px}
-  .tm-you-in{border-radius:28px;padding:28px 20px;gap:10px}.tm-you .tm-name{font-size:44px}.tm-you .tm-line{font-size:14px}.tm-you .tlink{margin:0}
+  .tm-you{grid-column:span 1}.tm-you-in{border-radius:50%;aspect-ratio:1/1;flex-direction:column;flex-wrap:nowrap;align-items:center;justify-content:center;text-align:center;padding:12px;gap:4px}.tm-you .tm-name{font-size:34px;order:0}.tm-you .tm-role{flex-basis:auto;order:0}.tm-you .tm-line{display:none}.tm-you .tlink{margin:4px 0 0;font-size:13px}
 }
