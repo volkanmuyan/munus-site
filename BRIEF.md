@@ -66,7 +66,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Semih — Partner · Executive Creative Director (creative)
    - Ceren (she) — Partner · Head of Growth & Client Relations: sales, marketing, client relations (brand)
    - Çağlar — Partner · Editor-in-Chief (corporate)
-   - Ulaş — Business Development Lead · Industrial & Engineering: mechanical engineer, sales/marketing for engineering firms, works with Ceren (brand)
+   - Ulaş Baran Günhan — Business Development Lead · Industrial & Engineering: mechanical engineer, sales/marketing for engineering firms, works with Ceren (brand)
    - Açelya Kaynar — Sr. Creative Writer / Strategic Partnerships & Social Media Lead (brand): brand partnerships, sponsorships
    - Ozan Serkan Muyan — Architect / Creative Technologist · 3D & AI: architect, graphics + 3D, focus on AI (creative)
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
