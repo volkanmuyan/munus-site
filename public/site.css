@@ -618,3 +618,6 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
   .tm-ph,.tm-you-in{width:92%}
   .tm-you{grid-column:span 1}.tm-you-in{border-radius:50%;aspect-ratio:1/1;flex-direction:column;flex-wrap:nowrap;align-items:center;justify-content:center;text-align:center;padding:12px;gap:4px}.tm-you .tm-name{font-size:34px;order:0}.tm-you .tm-role{flex-basis:auto;order:0}.tm-you .tm-line{display:none}.tm-you .tlink{margin:4px 0 0;font-size:13px}
 }
+
+/* about: platforms band */
+.tools.tools-top{margin-top:0}
