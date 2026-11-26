@@ -67,7 +67,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Ceren (she) — Partner · Head of Growth & Client Relations: sales, marketing, client relations (brand)
    - Çağlar — Partner · Editor-in-Chief (corporate)
    - Ulaş — Business Development Lead · Industrial & Engineering: mechanical engineer, sales/marketing for engineering firms, works with Ceren (brand)
-   - Açelya Kaynar — Strategic Partnerships & Social Media Lead (brand): brand partnerships, sponsorships
+   - Açelya Kaynar — Creative Writer / Strategic Partnerships & Social Media Lead (brand): brand partnerships, sponsorships
    - Ozan Serkan Muyan — Architect / Creative Technologist · 3D & AI: architect, graphics + 3D, focus on AI (creative)
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
    - Başak Gümüş — Brand Strategy & Social Media Lead · Influencer Relations (brand); replaced the Media Relations Specialist card for now
