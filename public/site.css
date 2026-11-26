@@ -586,8 +586,8 @@ html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-you .tm-name{font-weight:700;letter-spacing:-.045em;font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
-/* 13 people: the open seat fills the rest of the last row (3 of 4 columns, 2 of 3, 1 of 2). Re-check when the head count changes. */
-.tm-you{grid-column:span 3}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}
+/* 15 people: on desktop (4 cols) the open seat is the 16th round card; on tablet (3 cols) it runs the last row as a pill; on phones (2 cols) it sits next to the 15th. Re-check when the head count changes. */
+@media (min-width:641px) and (max-width:1100px){.tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}}
 
 /* how we work */
 .ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
@@ -606,7 +606,6 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
 
 @media (max-width:1100px){
   .tm-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .tm-you{grid-column:span 2}
   .ways{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:900px){
