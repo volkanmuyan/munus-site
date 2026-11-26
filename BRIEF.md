@@ -71,7 +71,7 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Ozan Serkan Muyan — Architect / Creative Technologist · 3D & AI: architect, graphics + 3D, focus on AI (creative)
    - Name Surname — Account Manager · Events & Corporate Comms: client-facing, also runs events (corporate)
    - Name Surname — Media Relations Specialist (corporate)
-   - Name Surname — Research & Sustainability Lead: sector reports, surveys, ESG/sustainability reporting (research)
+   - Zeynep — Research & Social Impact Consultant: sector reports, surveys, ESG/social impact (research)
    - Name Surname — Head of Data & Insights: very senior data analyst; media analysis, measurement, dashboards, munus lens (research)
    - Kedito (tuxedo cat, "Office Cat" tag) — Chief Morale Officer; also Executive Box Director and Head of Purr-formance. Photo `team/kedito.webp` is a stand-in: "Tuxedo cat, front view" by Ryan Schwark, Wikimedia Commons, CC0. Swap for the real cat.
    - Name Surname — Art Director, Graphic Designer, Motion Designer (creative); Spatial Design Lead and 3D & Spatial Designer, the two architects (events)
