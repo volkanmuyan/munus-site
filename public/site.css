@@ -565,18 +565,16 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 .tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(36px,4vw,56px) clamp(14px,1.6vw,24px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
 .tm{display:flex;flex-direction:column;gap:4px}
 .tm.in{animation:rise .9s var(--ease) backwards;animation-delay:var(--d,0s)}
-.tm-ph{position:relative;aspect-ratio:4/5;margin-bottom:12px;border-radius:14px;overflow:hidden;background:var(--grey-light)}
-.tm-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:grayscale(1) contrast(1.08);transition:transform 1.2s var(--ease)}
-.tm:hover .tm-ph img{transform:scale(1.04)}
+.tm-ph{position:relative;aspect-ratio:1/1;margin-bottom:14px;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}
+.tm-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;border-radius:50%;background:var(--grey-light);filter:grayscale(1) contrast(1.08)}
+.tm:hover .tm-ph{transform:scale(1.03) rotate(-1.5deg)}
 .tm-sil{position:absolute;inset:0;width:100%;height:100%;fill:var(--grey)}
 .tm-ph .ph-tag{position:absolute;left:10px;bottom:10px;z-index:2;font-size:12px;padding:4px 10px}
 .doodle{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
-.doodle *{fill:none;stroke:var(--dc);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.doodle *{fill:none;stroke:var(--dc);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
 .tm.in .doodle *{animation:draw 1.1s var(--ease) forwards;animation-delay:calc(var(--d,0s) + .45s)}
 .tm.in .doodle :nth-child(2){animation-delay:calc(var(--d,0s) + .8s)}
 .tm.in .doodle :nth-child(3){animation-delay:calc(var(--d,0s) + 1.05s)}
-.tm .doodle{transform-origin:50% 40%;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}
-.tm:hover .doodle{transform:rotate(-2.5deg) scale(1.03)}
 .motion-off .doodle *{stroke-dashoffset:0}
 @media (prefers-reduced-motion:reduce){.doodle *{stroke-dashoffset:0;animation:none!important}}
 .tm-name{margin:0;font-weight:500;font-size:clamp(19px,1.5vw,22px);line-height:1.15;letter-spacing:-.025em}
@@ -584,12 +582,12 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-role{font-size:15px;font-weight:400;line-height:1.35;color:var(--muted)}
 .tm-line{margin-top:4px;font-size:14px;line-height:1.45;color:var(--muted)}
-.tm-you-in{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;aspect-ratio:4/5;padding:20px;border:1.5px dashed var(--grey);border-radius:14px}
+.tm-you-in{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;aspect-ratio:1/1;padding:20px;border:1.5px dashed var(--grey);border-radius:50%;align-items:center;justify-content:center;text-align:center}
 .tm-you .tm-name{font-weight:700;letter-spacing:-.045em;font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
 /* desktop: 16 people + the open seat in 4 columns, so the open seat runs the full last row as a wide banner. Re-check when the head count changes. */
-@media (min-width:1101px){.tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}}
+@media (min-width:1101px){.tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}}
 
 /* how we work */
 .ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
@@ -616,6 +614,6 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
 @media (max-width:640px){
   .ways{grid-template-columns:minmax(0,1fr)}
   .tm-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 12px}
-  .tm-you{grid-column:1 / -1}
+  .tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;border-radius:28px;padding:28px 20px}
   .tm-line{font-size:13px}
 }

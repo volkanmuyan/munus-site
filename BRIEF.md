@@ -75,7 +75,8 @@ Sectors: energy & utilities · construction & building materials · public secto
    - Name Surname — Head of Data & Insights: very senior data analyst; media analysis, measurement, dashboards, munus lens (research)
    - Kedito (tuxedo cat, "Office Cat" tag) — Chief Morale Officer; also Executive Box Director and Head of Purr-formance. Photo `team/kedito.webp` is a stand-in: "Tuxedo cat, front view" by Ryan Schwark, Wikimedia Commons, CC0. Swap for the real cat.
    - Mani — Senior Graphic Designer / Art Director; Koray and Ozan Serkan Muyan — Architect / Creative Technologist · 3D & AI (creative)
-   - Mehmet Serdar — Junior Graphic Designer; Nehir — Architect / 3D Artist (creative)
+   - Mehmet Serdar Gül — Junior Graphic Designer; Nehir Bal — Architect / 3D Artist (creative). Studio cards use full names (Mani Bagheri Hosseini, Koray İn, Zeynep Bastıyalı)
+   - Photos: round frames; marker doodles trace clothes and accessories (collars, buttons, hood strings, glasses, earrings), bak-style
    Photos are B&W (4:5); for now every card without a photo reuses one of the four 3D placeholder avatars (team/01–04, spread so no row or column repeats); each carries a hand-drawn SVG doodle in the person's expertise colour that draws itself in on scroll (target + arrow, crown, speech bubble, quote marks + edit caret, hashtag + heart, frame, squiggle, play, floor plan, wireframe cube). Once real photos are in, re-place each doodle on the photo (trace a collar, glasses, a gesture).
 3. **How we work** — "the way we sit.": four principles (draft).
 4. **Culture** — "life at munus." photo strip + the perks list (same blocks as on the home page; keep both in step).
