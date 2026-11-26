@@ -562,10 +562,10 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 /* team: one flat grid; B&W photos with a hand-drawn doodle in the person's expertise colour */
 .x-brand{--dc:var(--c-brand)}.x-creative{--dc:var(--c-creative)}.x-events{--dc:var(--c-events)}
 .x-corporate{--dc:var(--c-corporate)}.x-research{--dc:var(--c-research)}.x-advisory{--dc:var(--c-advisory)}
-.tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(36px,4vw,56px) clamp(14px,1.6vw,24px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
+.tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(48px,5vw,80px) clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
 .tm{display:flex;flex-direction:column;gap:4px}
 .tm.in{animation:rise .9s var(--ease) backwards;animation-delay:var(--d,0s)}
-.tm-ph{position:relative;aspect-ratio:1/1;margin-bottom:14px;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}
+.tm-ph{position:relative;width:78%;aspect-ratio:1/1;margin-bottom:18px;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}
 .tm-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;border-radius:50%;background:var(--grey-light);filter:grayscale(1) contrast(1.08)}
 .tm:hover .tm-ph{transform:scale(1.03) rotate(-1.5deg)}
 .tm-sil{position:absolute;inset:0;width:100%;height:100%;fill:var(--grey)}
@@ -582,12 +582,12 @@ html[data-color="on"] .x-advisory{--tc:var(--c-advisory);--tt:var(--t-advisory)}
 html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-role{font-size:15px;font-weight:400;line-height:1.35;color:var(--muted)}
 .tm-line{margin-top:4px;font-size:14px;line-height:1.45;color:var(--muted)}
-.tm-you-in{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;aspect-ratio:1/1;padding:20px;border:1.5px dashed var(--grey);border-radius:50%;align-items:center;justify-content:center;text-align:center}
+.tm-you-in{width:78%;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;aspect-ratio:1/1;padding:20px;border:1.5px dashed var(--grey);border-radius:50%;align-items:center;justify-content:center;text-align:center}
 .tm-you .tm-name{font-weight:700;letter-spacing:-.045em;font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
 /* 15 people: on desktop (4 cols) the open seat is the 16th round card; on tablet (3 cols) it runs the last row as a pill; on phones (2 cols) it sits next to the 15th. Re-check when the head count changes. */
-@media (min-width:641px) and (max-width:1100px){.tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}}
+@media (min-width:641px) and (max-width:1100px){.tm-you{grid-column:1 / -1}.tm-you-in{width:100%;aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}}
 
 /* how we work */
 .ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
@@ -615,5 +615,6 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
   .ways{grid-template-columns:minmax(0,1fr)}
   .tm-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 12px}
   .tm-line{font-size:13px}
+  .tm-ph,.tm-you-in{width:92%}
   .tm-you{grid-column:span 1}.tm-you-in{border-radius:50%;aspect-ratio:1/1;flex-direction:column;flex-wrap:nowrap;align-items:center;justify-content:center;text-align:center;padding:12px;gap:4px}.tm-you .tm-name{font-size:34px;order:0}.tm-you .tm-role{flex-basis:auto;order:0}.tm-you .tm-line{display:none}.tm-you .tlink{margin:4px 0 0;font-size:13px}
 }
