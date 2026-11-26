@@ -109,3 +109,6 @@ Sectors: energy & utilities · construction & building materials · public secto
 - The credit lines say the work was done in previous roles; keep them. Showing client logos is common practice for portfolio work, but get permission where you can.
 - [ ] Fill in projects, numbers and people's previous roles.
 - [ ] "Official partner" badges only once munus is actually in those programmes.
+
+### About team grid (2026-11-26)
+Only people with real photos are shown for now: Volkan, Ceren, Ulaş, Açelya, Zeynep, Mani, Mehmet Serdar, Koray, Nehir, Ozan Serkan Muyan, Kedito + the open seat (12 cards, even in 4/3/2 columns). Removed until photos arrive: Semih, Çağlar, Başak Gümüş, Account Manager, Head of Data & Insights. Their cards are in git history (commit 60cd2d6).
