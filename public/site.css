@@ -586,7 +586,8 @@ html[data-color="on"] .tm-tag{background:var(--dc);color:var(--white)}
 .tm-you .tm-name{font-weight:700;letter-spacing:-.045em;font-size:clamp(36px,3.4vw,52px)}
 .tm-you .tm-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .tm-you .tlink{margin-top:10px}
-/* the open seat is a normal round card: 11 people + it fill 4, 3 and 2 columns evenly. Re-check when the head count changes. */
+/* 12 people fill 4, 3 and 2 columns exactly, so the open seat runs a full row as a pill banner. Re-check when the head count changes. */
+.tm-you{grid-column:1 / -1}.tm-you-in{aspect-ratio:auto;border-radius:999px;text-align:left;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start;gap:12px 40px;padding:clamp(28px,3vw,44px)}.tm-you .tm-name{font-size:clamp(48px,5vw,80px);order:-1}.tm-you .tm-role{flex-basis:100%;order:-2}.tm-you .tm-line{max-width:36ch;font-size:16px;padding-bottom:10px}.tm-you .tlink{margin:0 0 10px auto}
 
 /* how we work */
 .ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,48px);margin:clamp(40px,5vw,72px) 0 0;padding:0;list-style:none}
@@ -614,5 +615,5 @@ html[data-color="on"] .ways li:nth-child(4){border-color:var(--c-events)}
   .ways{grid-template-columns:minmax(0,1fr)}
   .tm-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 12px}
   .tm-line{font-size:13px}
-  .tm-you .tm-line{display:none}.tm-you-in{padding:12px}.tm-you .tm-name{font-size:34px}.tm-you .tlink{margin-top:4px;font-size:13px}
+  .tm-you-in{border-radius:28px;padding:28px 20px;gap:10px}.tm-you .tm-name{font-size:44px}.tm-you .tm-line{font-size:14px}.tm-you .tlink{margin:0}
 }

@@ -111,4 +111,4 @@ Sectors: energy & utilities · construction & building materials · public secto
 - [ ] "Official partner" badges only once munus is actually in those programmes.
 
 ### About team grid (2026-11-26)
-Only people with real photos are shown for now: Volkan, Ceren, Ulaş, Açelya, Zeynep, Mani, Mehmet Serdar, Koray, Nehir, Ozan Serkan Muyan, Kedito + the open seat (12 cards, even in 4/3/2 columns). Removed until photos arrive: Semih, Çağlar, Başak Gümüş, Account Manager, Head of Data & Insights. Their cards are in git history (commit 60cd2d6).
+Only people with real photos are shown for now: Volkan, Ceren, Ulaş, Açelya, Başak Gümüş, Zeynep, Mani, Mehmet Serdar, Koray, Nehir, Ozan Serkan Muyan, Kedito (12, even in 4/3/2 columns) + the open seat as a full-row pill. Removed until photos arrive: Semih, Çağlar, Account Manager, Head of Data & Insights. Their cards are in git history (commit 60cd2d6).
